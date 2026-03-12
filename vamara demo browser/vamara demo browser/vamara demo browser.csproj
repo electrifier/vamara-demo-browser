@@ -13,6 +13,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
+		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -52,7 +53,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Assets\supporters\" />
 		<Folder Include="Controls\" />
 		<Folder Include="Docs\screenhots\" />
 	</ItemGroup>
