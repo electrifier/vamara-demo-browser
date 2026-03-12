@@ -8,7 +8,8 @@
     <File Path="TextFile1.txt" />
   </Folder>
   <Folder Name="/Docs/about/">
-    <File Path="READ-me.md" />
+    <File Path="READ.me.de.md" />
+    <File Path="READme.md" />
   </Folder>
   <Project Path="vamara demo browser/vamara demo browser (Package)/vamara demo browser (Package).wapproj" Type="c7167f0d-bc9f-4e6e-afe1-012c56b48db5">
     <Deploy />

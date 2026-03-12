@@ -1,67 +1,67 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-    <RootNamespace>vamara_demo_browser</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Platforms>x86;x64;ARM64</Platforms>
-    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-    <UseWinUI>true</UseWinUI>
-    <WinUISDKReferences>false</WinUISDKReferences>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-  <ItemGroup>
-    <Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
-  </ItemGroup>
+	<PropertyGroup>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Nullable>enable</Nullable>
+		<OutputType>WinExe</OutputType>
+		<Platforms>x86;x64;ARM64</Platforms>
+		<RootNamespace>vamara_demo_browser</RootNamespace>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<UseWinUI>true</UseWinUI>
+		<WinUISDKReferences>false</WinUISDKReferences>
+	</PropertyGroup>
+	<ItemGroup>
+		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Manifest Include="$(ApplicationManifest)" />
-  </ItemGroup>
+	<ItemGroup>
+		<Manifest Include="$(ApplicationManifest)" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
-    <PackageReference Include="Vanara.Core" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.ComCtl32" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.CredUI" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Cryptography" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.DwmApi" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Gdi32" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.IpHlpApi" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Kernel32" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.NetApi32" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.NTDSApi" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Ole" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Rpc" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.SearchApi" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Security" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Shell32" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.ShlwApi" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.User32" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.WinTrust" Version="5.0.1" />
-    <PackageReference Include="Vanara.PInvoke.Ws2_32" Version="5.0.1" />
-    <PackageReference Include="Vanara.Security" Version="5.0.1" />
-    <PackageReference Include="Vanara.Windows.Extensions" Version="5.0.1" />
-    <PackageReference Include="Vanara.Windows.Shell" Version="5.0.1" />
-    <PackageReference Include="Vanara.Windows.Shell.Common" Version="5.0.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
+		<PackageReference Include="Vanara.Core" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.ComCtl32" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.CredUI" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Cryptography" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.DwmApi" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.IpHlpApi" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Kernel32" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.NetApi32" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.NTDSApi" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Ole" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Rpc" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.SearchApi" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Security" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Shell32" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.ShlwApi" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.User32" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.WinTrust" Version="5.0.1" />
+		<PackageReference Include="Vanara.PInvoke.Ws2_32" Version="5.0.1" />
+		<PackageReference Include="Vanara.Security" Version="5.0.1" />
+		<PackageReference Include="Vanara.Windows.Extensions" Version="5.0.1" />
+		<PackageReference Include="Vanara.Windows.Shell" Version="5.0.1" />
+		<PackageReference Include="Vanara.Windows.Shell.Common" Version="5.0.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="Assets\.a.i. generated\Copilot\.editorconfig" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="Assets\.a.i. generated\Copilot\.editorconfig" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Assets\supporters\" />
-    <Folder Include="Docs\screenhots\" />
-    <Folder Include="Controls\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Assets\supporters\" />
+		<Folder Include="Controls\" />
+		<Folder Include="Docs\screenhots\" />
+	</ItemGroup>
 
-    <!-- Publish Properties -->
-  <PropertyGroup>
-    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
-    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
-    <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
-    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
-  </PropertyGroup>
+	<!-- Publish Properties -->
+	<PropertyGroup>
+		<PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
+		<PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+		<PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
+		<PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
+	</PropertyGroup>
 </Project>
