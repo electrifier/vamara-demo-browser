@@ -51,6 +51,10 @@
     <None Include="Assets\.a.i. generated\Copilot\.editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Docs\screenhots\" />
+  </ItemGroup>
+
     <!-- Publish Properties -->
   <PropertyGroup>
     <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>

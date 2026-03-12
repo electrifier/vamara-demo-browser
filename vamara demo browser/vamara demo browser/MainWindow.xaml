@@ -17,15 +17,21 @@
 
         <NavigationView x:Name="navigationView">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Play" Content="Home" Tag="Wellcome Home" />
+                <NavigationViewItem Icon="World" Content="Home" Tag="Wellcome Home" />
                 <NavigationViewItem Icon="Save" Content="Windows Forms" Tag="Windows Forms Controls" />
                 <NavigationViewItem Icon="ProtectedDocument" Content="Docs" Tag="Documentation" />
-                <NavigationViewItem Icon="Clock" Content="History" Tag="History" />
+                <NavigationViewItem Icon="Calendar" Content="History" Tag="History" />
                 <NavigationViewItem Icon="Upload"  Content="App app (use drag and drop, or add manually, or grab folder of open explorer window)" Tag="submit a bug..." />
                 <NavigationViewItem Icon="Download" Content="Download" Tag="suggest a feature..." />
-                <NavigationViewItem Icon="Download" Content="Download" Tag="suggest a feature..." />
+                <NavigationViewItem Icon="Download" Content="Download from NuGet" Tag="Download packages from NGet" />
             </NavigationView.MenuItems>
             <Frame x:Name="contentFrame">
+                <Border Background="LightGray" Margin="20" CornerRadius="10">
+                    <TextBlock Text="Welcome to the Vanara demo browser! Select an item from the menu to get started." 
+                               HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" />
+                </Border>
+                <!-- The contentFrame is well known as the Home screen -->
+                <!-- -->
                 <!-- insert paste here -->
             </Frame>
         </NavigationView>
