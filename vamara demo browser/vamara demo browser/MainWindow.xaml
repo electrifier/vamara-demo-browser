@@ -15,12 +15,14 @@
 
     <Grid>
 
-        <NavigationView x:Name="mainNavigationView">
+        <NavigationView x:Name="navigationView">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Play" Content="Menu Item1" Tag="SamplePage1" />
-                <NavigationViewItem Icon="Save" Content="Menu Item2" Tag="SamplePage2" />
-                <NavigationViewItem Icon="Refresh" Content="Menu Item3" Tag="SamplePage3" />
-                <NavigationViewItem Icon="Download" Content="Menu Item4" Tag="SamplePage4" />
+                <NavigationViewItem Icon="Play" Content="Home" Tag="WellcomePage" />
+                <NavigationViewItem Icon="Save" Content="Windows Forms" Tag="Windows Forms Demos" />
+                <NavigationViewItem Icon="Refresh" Content="Docs" Tag="Docs" />
+                <NavigationViewItem Icon="Refresh" Content="History" Tag="History" />
+                <NavigationViewItem Icon="Download" Content="Menu Item4" Tag="submit a bug..." />
+                <NavigationViewItem Icon="Download" Content="Menu Item4" Tag="suggest a feature..." />
             </NavigationView.MenuItems>
             <Frame x:Name="contentFrame"/>
         </NavigationView>
