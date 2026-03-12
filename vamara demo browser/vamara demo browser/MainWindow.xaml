@@ -27,8 +27,9 @@
             </NavigationView.MenuItems>
             <Frame x:Name="contentFrame">
                 <Border Background="LightGray" Margin="20" CornerRadius="10">
-                    <TextBlock Text="Welcome to the Vanara demo browser! Select an item from the menu to get started." 
-                               HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" />
+                    <TextBlock HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" 
+                               Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                 </Border>
                 <!-- The contentFrame is well known as the Home screen -->
                 <!-- -->
