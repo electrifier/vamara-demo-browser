@@ -17,14 +17,17 @@
 
         <NavigationView x:Name="navigationView">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Play" Content="Home" Tag="WellcomePage" />
-                <NavigationViewItem Icon="Save" Content="Windows Forms" Tag="Windows Forms Demos" />
-                <NavigationViewItem Icon="Refresh" Content="Docs" Tag="Docs" />
-                <NavigationViewItem Icon="Refresh" Content="History" Tag="History" />
-                <NavigationViewItem Icon="Download" Content="Menu Item4" Tag="submit a bug..." />
-                <NavigationViewItem Icon="Download" Content="Menu Item4" Tag="suggest a feature..." />
+                <NavigationViewItem Icon="Play" Content="Home" Tag="Wellcome Home" />
+                <NavigationViewItem Icon="Save" Content="Windows Forms" Tag="Windows Forms Controls" />
+                <NavigationViewItem Icon="ProtectedDocument" Content="Docs" Tag="Documentation" />
+                <NavigationViewItem Icon="Clock" Content="History" Tag="History" />
+                <NavigationViewItem Icon="Upload"  Content="App app (use drag and drop, or add manually, or grab folder of open explorer window)" Tag="submit a bug..." />
+                <NavigationViewItem Icon="Download" Content="Download" Tag="suggest a feature..." />
+                <NavigationViewItem Icon="Download" Content="Download" Tag="suggest a feature..." />
             </NavigationView.MenuItems>
-            <Frame x:Name="contentFrame"/>
+            <Frame x:Name="contentFrame">
+                <!-- insert paste here -->
+            </Frame>
         </NavigationView>
 
     </Grid>
