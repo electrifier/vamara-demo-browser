@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
@@ -11,6 +11,9 @@
     <WinUISDKReferences>false</WinUISDKReferences>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
+  </ItemGroup>
 
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
@@ -42,6 +45,10 @@
     <PackageReference Include="Vanara.Windows.Extensions" Version="5.0.1" />
     <PackageReference Include="Vanara.Windows.Shell" Version="5.0.1" />
     <PackageReference Include="Vanara.Windows.Shell.Common" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Assets\.a.i. generated\Copilot\.editorconfig" />
   </ItemGroup>
 
     <!-- Publish Properties -->
