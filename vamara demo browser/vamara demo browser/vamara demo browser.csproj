@@ -15,6 +15,10 @@
 		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
 		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
 	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Pages\BlankPage1.xaml" />
+	  <None Remove="Pages\BlankWindow1.xaml" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Manifest Include="$(ApplicationManifest)" />
@@ -53,9 +57,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Controls\" />
 		<Folder Include="Docs\screenhots\" />
-		<Folder Include="Pages\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="Pages\BlankWindow1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="Pages\BlankPage1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	</ItemGroup>
 
 	<!-- Publish Properties -->

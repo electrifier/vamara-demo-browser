@@ -26,7 +26,7 @@ namespace vamara_demo_browser
     {
         public MainWindow()
         {
-            //InitializeComponent();
+            InitializeComponent();
 
             //this.navigationView.SelectionChanged += NavigationView_SelectionChanged;
 
