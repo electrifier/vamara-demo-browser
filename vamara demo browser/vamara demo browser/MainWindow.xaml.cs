@@ -7,6 +7,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,7 +26,65 @@ namespace vamara_demo_browser
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
+
+            //this.navigationView.SelectionChanged += NavigationView_SelectionChanged;
+
+            // "NavigationView_SelectionChanged";    
+            // TODO: Add event handlers for navigation view selection changes and settings selection
+            // 
         }
+
+        //private void InitializeComponent()
+        //{
+        //    DebugSettings.ReferenceEquals(this, null);
+        //
+        //    Debug.WriteLine("InitializeComponent called");
+        //}
+
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            //var dbgSettings = DebugSettings.Equals(args, sender);
+
+            if (args.IsSettingsSelected)
+            {
+                // Handle settings selection
+                return;
+            }
+        }
+
+        //        public void OpenBrowser(object sender, RoutedEventArgs e)
+        //        {
+        //            var browserWindow = new BrowserWindow();
+        //            browserWindow.Activate();
+        //        }
+
+        //public bool NavigationView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs e)
+        //{
+        //    if (e.IsSettingsSelected)
+        //    {
+        //        // Handle settings selection
+        //        return;
+        //    }
+        //    var selectedItem = e.SelectedItem as NavigationViewItem;
+        //    if (selectedItem != null)
+        //    {
+        //        var tag = selectedItem.Tag as string;
+        //        switch (tag)
+        //        {
+        //            case "home":
+        //                // Navigate to home page
+        //                break;
+        //            case "favorites":
+        //                // Navigate to favorites page
+        //                break;
+        //            case "history":
+        //                // Navigate to history page
+        //                break;
+        //            default:
+        //                break;
+        //        }
+        //    }
+        //}
     }
 }
