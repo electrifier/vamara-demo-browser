@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -44,14 +45,26 @@ namespace vamara_demo_browser
 
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            //var dbgSettings = DebugSettings.Equals(args, sender);
+            StringBuilder strBuf = new();
 
-            if (args.IsSettingsSelected)
+            try
             {
-                // Handle settings selection
-                return;
+//                if (args.IsSettingsSelected)
+//                {
+//                    // Handle settings selection
+//                    return;
+//                }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
+
+        // StringBuilder sb = new();
+        // var dbgSettings = DebugSettings.Equals(args, sender);
 
         //        public void OpenBrowser(object sender, RoutedEventArgs e)
         //        {
