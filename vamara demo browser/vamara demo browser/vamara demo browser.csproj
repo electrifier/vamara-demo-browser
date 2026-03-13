@@ -14,6 +14,7 @@
 	<ItemGroup>
 		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
 		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
+		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Pages\BlankPage1.xaml" />
@@ -57,6 +58,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Docs\screenhots\" />
 	</ItemGroup>
 
