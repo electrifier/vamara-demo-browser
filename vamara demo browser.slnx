@@ -4,9 +4,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Folder Name="/Docs/">
-    <File Path="TextFile1.txt" />
-  </Folder>
+  <Folder Name="/Docs/" />
   <Folder Name="/Docs/about/">
     <File Path="READ.me.de.md" />
     <File Path="READme.md" />
