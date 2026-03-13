@@ -29,13 +29,52 @@
             </NavigationView.MenuItems>
 
 
-                    <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
+            <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
 
-                    <!--<NavigationCacheMode>Enabled</NavigationCacheMode>-->
+            <!--<NavigationCacheMode>Enabled</NavigationCacheMode>-->
 
 
-                    <Frame x:Name="contentFrame">
-                        <Grid RowDefinitions="Auto,*">
+            <Frame x:Name="contentFrame">
+                <Grid RowDefinitions="Auto,Auto,Auto,*">
+
+                    <!-- HEADER -->
+                    <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+            Padding="16"
+            Grid.Row="0">
+                        <StackPanel>
+                            <TextBlock Text="Vanara – The Friendly Interop Beast"
+                       FontSize="28"
+                       FontWeight="Bold"/>
+                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever."
+                       Opacity="0.7"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- TABVIEW -->
+                    <TabView Grid.Row="1"
+             x:Name="MainTabs"
+             IsAddTabButtonVisible="False">
+                        <TabViewItem Header="Overview"/>
+                        <TabViewItem Header="Interop"/>
+                        <TabViewItem Header="Shell"/>
+                        <TabViewItem Header="Windowing"/>
+                        <TabViewItem Header="Composition"/>
+                    </TabView>
+
+                    <!-- RIBBON (optional) -->
+                    <CommandBar Grid.Row="2"
+                x:Name="RibbonBar"
+                DefaultLabelPosition="Right">
+                        <AppBarButton Icon="Refresh" Label="Reload"/>
+                        <AppBarButton Icon="Copy" Label="Copy Code"/>
+                        <AppBarButton Icon="Help" Label="Docs"/>
+                    </CommandBar>
+
+                    <!-- CONTENT -->
+                    <Frame Grid.Row="3" x:Name="ContentFrame"/>
+                </Grid>
+
+                <!--<Grid RowDefinitions="Auto,*">
                             <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" 
                             Height="80"
                             Padding="20"
@@ -52,17 +91,19 @@
                                 </StackPanel>
                             </Border>
 
-                            <!-- Rest der App -->
-                        </Grid>
+                            -->
+                <!-- Rest der App -->
+                <!--
+                        </Grid>-->
 
 
-                        <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <HorizontalAlignment="Center" 
                                VerticalAlignment="Center" />
                 </StackPanel>-->
 
 
-                        <!--<Border Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
+                <!--<Border Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
                     <TextBlock HorizontalAlignment="Center" 
                                VerticalAlignment="Center" 
                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
@@ -73,10 +114,10 @@
                                VerticalAlignment="Center" 
                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                 </Border>-->
-                        <!-- The contentFrame is well known as the Home screen -->
-                        <!-- -->
-                        <!-- insert paste here -->
-                    </Frame>
+                <!-- The contentFrame is well known as the Home screen -->
+                <!-- -->
+                <!-- insert paste here -->
+            </Frame>
         </NavigationView>
     </Grid>
 </Window>
