@@ -69,7 +69,7 @@
 	<ItemGroup>
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
-		<Folder Include="Docs\screenhots\" />
+		<Folder Include="Docs\screenshots\" />
 		<Folder Include="Pages\Templates\" />
 	</ItemGroup>
 
