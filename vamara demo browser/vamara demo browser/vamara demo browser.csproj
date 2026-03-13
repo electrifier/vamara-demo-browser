@@ -12,6 +12,10 @@
 		<WinUISDKReferences>false</WinUISDKReferences>
 	</PropertyGroup>
 	<ItemGroup>
+	  <Compile Remove="Controls\CustomControl1.cs" />
+	  <Compile Remove="Controls\TabbedCommandBarExperiment.cs" />
+	</ItemGroup>
+	<ItemGroup>
 		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
 		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
 		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
@@ -63,7 +67,9 @@
 
 	<ItemGroup>
 		<Folder Include="Assets\Themes\Lorraine\" />
+		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenhots\" />
+		<Folder Include="Pages\Templates\" />
 	</ItemGroup>
 
 	<ItemGroup>

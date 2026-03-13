@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vanara.winforms.demos.elevator
+namespace vanara.winforms.demos.elevator;
+
+internal class TrustLevelElevator
 {
-    internal class TrustLevelElevator
-    {
-    }
 }
