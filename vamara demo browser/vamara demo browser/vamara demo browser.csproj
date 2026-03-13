@@ -20,6 +20,10 @@
 	  <None Remove="Pages\BlankPage1.xaml" />
 	  <None Remove="Pages\BlankWindow1.xaml" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Page Remove="Themes\Longhorn.xaml" />
+	  <Page Remove="Themes\Template.xaml" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Manifest Include="$(ApplicationManifest)" />
@@ -60,6 +64,15 @@
 	<ItemGroup>
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Docs\screenhots\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Themes\Template.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	  <None Update="Themes\Longhorn.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
