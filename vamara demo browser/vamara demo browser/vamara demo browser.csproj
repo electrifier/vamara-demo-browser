@@ -23,6 +23,7 @@
 	<ItemGroup>
 	  <None Remove="Pages\BlankPage1.xaml" />
 	  <None Remove="Pages\BlankWindow1.xaml" />
+	  <None Remove="Strings\Localizatoin i18n Dictionary.xaml" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Page Remove="Themes\Longhorn.xaml" />
@@ -73,6 +74,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Page Update="Strings\Localizatoin i18n Dictionary.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	  <None Update="Themes\Template.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
@@ -105,5 +109,14 @@
 		<PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
 		<PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
 		<PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
+		<Title>Vanra demo browser</Title>
+		<Version>5.26.313</Version>
+		<Description>5.26.313</Description>
+		<Copyright>(c) @dahall</Copyright>
+		<PackageProjectUrl>https://github.com/dahall/Vanara</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/dahall/Vanara</RepositoryUrl>
+		<PackageTags>Vanara; Pinvoke; P-Invoke; WinForms; Win32; Shell32; Windows; Demo; Interop</PackageTags>
+		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
+		<IncludeSymbols>True</IncludeSymbols>
 	</PropertyGroup>
 </Project>
