@@ -91,6 +91,12 @@
 	  <Page Update="Pages\BlankPage1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
+	  <Page Update="Themes\Dark.xaml">
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="Themes\Default_sys.xaml">
+	    <SubType>Designer</SubType>
+	  </Page>
 	</ItemGroup>
 
 	<!-- Publish Properties -->
