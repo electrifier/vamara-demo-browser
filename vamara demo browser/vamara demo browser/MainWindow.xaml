@@ -16,16 +16,43 @@
     <Grid>
         <NavigationView x:Name="navigationView">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="World"             Content="Home"                Tag="Wellcome Home"               />
-                <NavigationViewItem Icon="Save"              Content="Windows Forms"       Tag="Windows Forms Controls"      />
-                <NavigationViewItem Icon="ProtectedDocument" Content="Docs"                Tag="Documentation"               />
-                <NavigationViewItem Icon="Calendar"          Content="History"             Tag="History"                     />
-                <NavigationViewItem Icon="Download"          Content="Download"            Tag="suggest a feature..."        />
-                <NavigationViewItem Icon="Download"          Content="Download from NuGet" Tag="Download packages from NGet" />
+                <NavigationViewItem Icon="World"                  Content="Home"                Tag="Wellcome Home"               />
+                <NavigationViewItem Icon="Save"                   Content="Windows Forms"       Tag="Windows Forms Controls"      />
+                <NavigationViewItem Icon="ProtectedDocument"      Content="Docs"                Tag="Documentation"               />
+                <NavigationViewItem Icon="Calendar"               Content="History"             Tag="History"                     />
+                <NavigationViewItem Icon="Bullets"                Content="Bulb"            Tag="suggest a feature..."        />
+                <NavigationViewItem Icon="Download"               Content="Download from NuGet" Tag="Download packages from NGet" />
+                <NavigationViewItem Icon="Admin"                  Content="Copilot" Tag="Use Copilot" />
+                <NavigationViewItem Icon="GlobalNavigationButton" Content="GitHub" Tag="Use GitHub client" />
                 <!-- Friday, 13th of March 2026 -->
                 <NavigationViewItem Icon="Upload"            Tag="submit a bug..."                                                Content="App app (use drag and drop, or add manually, or grab folder of open explorer window)"  />
             </NavigationView.MenuItems>
+
+            <!--<NavigationCacheMode>Enabled</NavigationCacheMode>-->
+
+
             <Frame x:Name="contentFrame">
+                <Grid RowDefinitions="Auto,*">
+                    <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" 
+                            Height="80"
+                            Padding="20"
+                            VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <FontIcon Glyph="&#xE7C3;" FontSize="32"/>
+                            <StackPanel>
+                                <TextBlock Text="Vanara Demo Browser" 
+                           FontSize="24" 
+                           FontWeight="Bold"/>
+                                <TextBlock Text="Explore. Learn. Interop." 
+                           Opacity="0.7"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Rest der App -->
+                </Grid>
+
+
                 <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <HorizontalAlignment="Center" 
                                VerticalAlignment="Center" />
