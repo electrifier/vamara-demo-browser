@@ -76,9 +76,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Page Update="Pages\BlankPage1 - Copy.xaml">
-	    <SubType>Designer</SubType>
-	  </Page>
 	  <Page Update="Pages\BlankWindow1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
