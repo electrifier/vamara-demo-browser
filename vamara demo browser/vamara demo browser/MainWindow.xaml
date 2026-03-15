@@ -13,10 +13,8 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <!-- TODO: <NavigationCacheMode>Enabled</NavigationCacheMode>-->
-
     <Grid>
-        <NavigationView x:Name="RootNavigationView">
+        <NavigationView x:Name="RootNavigationView" >
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="World"                  Content="Home"                Tag="Wellcome Home"  />
                 <NavigationViewItem Icon="Save"                   Content="Windows Forms"       Tag="Windows Forms Controls"  />
@@ -31,7 +29,8 @@
                 <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
             </NavigationView.MenuItems>
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
-            <!--<NavigationCacheMode>Enabled</NavigationCacheMode>-->
+            <!-- <NavigationCacheMode>Enabled</NavigationCacheMode>-->
+            <!-- <NavigationCacheMode="Enabled"/>-->
             <Frame x:Name="navigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
                     <!-- HEADER -->
@@ -59,10 +58,20 @@
                     </CommandBar>
 
                     <!-- CONTENT -->
-                    <Frame x:Name="ContentFrame" Grid.Row="3" />
+                    <Frame x:Name="ContentFrame" Grid.Row="3" >
+                    </Frame>
                 </Grid>
 
-                <!--<Grid RowDefinitions="Auto,*">
+                <!-- <PathIcon Width="28" Height="28">
+                            <PathIcon.Data>
+                                <GeometryGroup>
+                                    <LineGeometry StartPoint="14,2" EndPoint="14,18"/>
+                                    <LineGeometry StartPoint="14,18" EndPoint="8,26"/>
+                                    <LineGeometry StartPoint="14,18" EndPoint="20,26"/>
+                                </GeometryGroup>
+                            </PathIcon.Data>
+                        </PathIcon> -->
+                <!-- <Grid RowDefinitions="Auto,*">
                             <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" 
                             Height="80"
                             Padding="20"
@@ -78,33 +87,25 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-
-                            -->
-                <!-- Rest der App -->
-                <!--
-                        </Grid>-->
+                        </Grid> -->
 
 
-                <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <HorizontalAlignment="Center" 
-                               VerticalAlignment="Center" />
-                </StackPanel>-->
+                <!-- <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                     <HorizontalAlignment="Center" VerticalAlignment="Center" />
+                     </StackPanel> -->
 
 
-                <!--<Border Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
-                    <TextBlock HorizontalAlignment="Center" 
-                               VerticalAlignment="Center" 
-                               Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
-                </Border>
+                <!-- <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
+                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
+                     </Border>
 
-                <Border Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
+                    <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
                     <TextBlock HorizontalAlignment="Center" 
                                VerticalAlignment="Center" 
                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                 </Border>-->
                 <!-- The contentFrame is well known as the Home screen -->
-                <!-- -->
-                <!-- insert paste here -->
             </Frame>
         </NavigationView>
     </Grid>
