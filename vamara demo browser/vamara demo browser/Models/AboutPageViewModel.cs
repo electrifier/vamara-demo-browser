@@ -1,5 +1,18 @@
-﻿namespace vamara_demo_browser.Models;
+﻿using System.Collections.ObjectModel;
+using vamara_demo_browser.Services;
 
-internal class AboutPageViewModel
+public class AboutPageViewModel
 {
+    public string AppVersion { get; }
+    public string BuildInfo { get; }
+//    public ObservableCollection<VanaraAssemblyInfo> VanaraAssemblies { get; }
+    public string MeditationText { get; }
+
+    public AboutPageViewModel(AppInfoService appInfo)
+    {
+//        AppVersion = appInfo.GetAppVersion();
+//        BuildInfo = appInfo.GetBuildInfo();
+//        VanaraAssemblies = new ObservableCollection<VanaraAssemblyInfo>(appInfo.GetVanaraAssemblies());
+//        MeditationText = VanaraMeditation.GetRandom();
+    }
 }
