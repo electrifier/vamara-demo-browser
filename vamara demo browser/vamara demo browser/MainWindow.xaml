@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window
     x:Class="vamara_demo_browser.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:vamara_demo_browser"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     mc:Ignorable="d"
-    Title="vamara demo browser - beta build">
+    Title="vamara. interop with pleasure. demo browser beta build">
 
     <Window.SystemBackdrop>
         <MicaBackdrop />
@@ -30,29 +30,17 @@
                 <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
                 <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
             </NavigationView.MenuItems>
-
-
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
-
             <!--<NavigationCacheMode>Enabled</NavigationCacheMode>-->
-
-
-            <Frame x:Name="contentFrame">
+            <Frame x:Name="navigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
-
                     <!-- HEADER -->
-                    <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}"
-            Padding="16"
-            Grid.Row="0">
+                    <Border Grid.Row="0" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
-                            <TextBlock Text="Vanara – The Friendly Interop Beast"
-                       FontSize="28"
-                       FontWeight="Bold"/>
-                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever."
-                       Opacity="0.7"/>
+                            <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
+                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>
                         </StackPanel>
                     </Border>
-
                     <!-- TABVIEW -->
                     <TabView x:Name="MainTabs" Grid.Row="1" IsAddTabButtonVisible="False">
                         <TabViewItem Header="Overview"/>
@@ -64,16 +52,14 @@
                     </TabView>
 
                     <!-- RIBBON (optional) -->
-                    <CommandBar Grid.Row="2"
-                x:Name="RibbonBar"
-                DefaultLabelPosition="Right">
+                    <CommandBar x:Name="RibbonBar" Grid.Row="2" DefaultLabelPosition="Right">
                         <AppBarButton Icon="Refresh" Label="Reload"/>
                         <AppBarButton Icon="Copy" Label="Copy Code"/>
                         <AppBarButton Icon="Help" Label="Docs"/>
                     </CommandBar>
 
                     <!-- CONTENT -->
-                    <Frame Grid.Row="3" x:Name="ContentFrame"/>
+                    <Frame x:Name="ContentFrame" Grid.Row="3" />
                 </Grid>
 
                 <!--<Grid RowDefinitions="Auto,*">
