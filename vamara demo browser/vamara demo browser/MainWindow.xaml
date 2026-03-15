@@ -16,7 +16,7 @@
     <!-- TODO: <NavigationCacheMode>Enabled</NavigationCacheMode>-->
 
     <Grid>
-        <NavigationView x:Name="navigationView">
+        <NavigationView x:Name="RootNavigationView">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="World"                  Content="Home"                Tag="Wellcome Home"  />
                 <NavigationViewItem Icon="Save"                   Content="Windows Forms"       Tag="Windows Forms Controls"  />

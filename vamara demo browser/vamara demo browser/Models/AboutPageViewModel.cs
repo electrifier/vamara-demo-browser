@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using vamara_demo_browser.Services;
 
+namespace vamara_demo_browser.Models;
+
 public class AboutPageViewModel
 {
     public string AppVersion { get; }

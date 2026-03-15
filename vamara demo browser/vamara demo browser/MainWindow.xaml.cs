@@ -15,14 +15,27 @@ public sealed partial class MainWindow : Window
 {
     public MainWindow()
     {
-        InitializeComponent();
+        this.InitializeComponent();
+
+        // NavigationView initialisiert → jetzt direkt zur AboutPage navigieren
+        RootNavigationView.Loaded += (_, __) =>
+        {
+//            RootNavigationView.SelectedItem = RootNavigationView.MenuItems
+//                .OfType<NavigationViewItem>()
+//                .FirstOrDefault(i => (string)i.Tag == "AboutPage");
+//
+//            ContentFrame.Navigate(typeof(Pages.AboutPage));
+        };
+
+    }
+
 
         //this.navigationView.SelectionChanged += NavigationView_SelectionChanged;
 
         // "NavigationView_SelectionChanged";    
         // TODO: Add event handlers for navigation view selection changes and settings selection
         // 
-    }
+    
 
     //private void InitializeComponent()
     //{

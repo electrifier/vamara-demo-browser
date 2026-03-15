@@ -1,5 +1,7 @@
 ﻿using System;
 
+namespace vamara_demo_browser.Models;
+
 public static class VanaraMeditation
 {
     private static readonly string[] Lines =
