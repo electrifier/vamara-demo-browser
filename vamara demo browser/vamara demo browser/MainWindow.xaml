@@ -12,10 +12,22 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
     <Grid>
-        <NavigationView x:Name="RootNavigationView" AlwaysShowHeader="True" ExpandedModeThresholdWidth="320" Header="Vanara Header" IsBackButtonVisible="Auto" IsBackEnabled="True" IsSettingsVisible="True" IsTabStop="False" PaneDisplayMode="Left" PaneTitle="Vana" SelectionChanged="NavigationView_SelectionChanged" SelectionFollowsFocus="Disabled">
+        <NavigationView x:Name="RootNavigationView" 
+                        AlwaysShowHeader="True" 
+                        ExpandedModeThresholdWidth="320" 
+                        Header="Vanara Header" 
+                        IsBackButtonVisible="Auto" 
+                        IsBackEnabled="True" 
+                        IsSettingsVisible="True" 
+                        IsTabStop="False" 
+                        PaneDisplayMode="Left" 
+                        PaneTitle="Vana`ra" 
+                        SelectionChanged="NavigationView_SelectionChanged" 
+                        SelectionFollowsFocus="Disabled">
             <NavigationView.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="Vanara" FontSize="28" FontWeight="SemiBold" Margin="12,0"/>
+                    <!-- add link: https://github.com/tajbender/WinClassicSamplesCS/tree/master -->
                     <!-- todo: Tapped="OnHeaderTapped" -->
                 </DataTemplate>
             </NavigationView.HeaderTemplate>
@@ -34,10 +46,10 @@
                     <!-- HEADER -->
                     <Border Grid.Row="0" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
-                            <Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png"/>
                             <!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
                             <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
                             <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>-->
+                            <Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Border>
 
