@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window
     x:Class="vamara_demo_browser.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:vamara_demo_browser"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     mc:Ignorable="d"
-    Title="vamara demo browser - beta build">
+    Title="vamara. interop with pleasure. demo browser beta build">
 
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <!-- TODO: <NavigationCacheMode>Enabled</NavigationCacheMode>-->
-
     <Grid>
-        <NavigationView x:Name="navigationView">
+        <NavigationView x:Name="RootNavigationView" >
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="World"                  Content="Home"                Tag="Wellcome Home"  />
+                <NavigationViewItem Tag="Vana-Sthala">
+                    <NavigationViewItem.Icon>
+                        <PathIcon>
+                            <PathIcon.Data>
+                                <GeometryGroup>
+                                    <LineGeometry StartPoint="6,4" EndPoint="6,16"/>
+                                    <LineGeometry StartPoint="12,2" EndPoint="12,18"/>
+                                    <LineGeometry StartPoint="18,4" EndPoint="18,16"/>
+                                </GeometryGroup>
+                            </PathIcon.Data>
+                        </PathIcon>
+                    </NavigationViewItem.Icon>
+                    <NavigationViewItem.Content>Vana</NavigationViewItem.Content>
+                </NavigationViewItem>
+
+                <!--<NavigationViewItem Icon="World"                  Content="Vana"                Tag="Vana-Sthala"  />-->
                 <NavigationViewItem Icon="Save"                   Content="Windows Forms"       Tag="Windows Forms Controls"  />
                 <NavigationViewItem Icon="ProtectedDocument"      Content="Docs"                Tag="Documentation"  />
                 <NavigationViewItem Icon="Calendar"               Content="History"             Tag="History"  />
@@ -30,29 +43,18 @@
                 <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
                 <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
             </NavigationView.MenuItems>
-
-
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
-
-            <!--<NavigationCacheMode>Enabled</NavigationCacheMode>-->
-
-
-            <Frame x:Name="contentFrame">
+            <!-- <NavigationCacheMode>Enabled</NavigationCacheMode>-->
+            <!-- <NavigationCacheMode="Enabled"/>-->
+            <Frame x:Name="navigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
-
                     <!-- HEADER -->
-                    <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}"
-            Padding="16"
-            Grid.Row="0">
+                    <Border Grid.Row="0" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
-                            <TextBlock Text="Vanara – The Friendly Interop Beast"
-                       FontSize="28"
-                       FontWeight="Bold"/>
-                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever."
-                       Opacity="0.7"/>
+                            <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
+                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>
                         </StackPanel>
                     </Border>
-
                     <!-- TABVIEW -->
                     <TabView x:Name="MainTabs" Grid.Row="1" IsAddTabButtonVisible="False">
                         <TabViewItem Header="Overview"/>
@@ -64,19 +66,27 @@
                     </TabView>
 
                     <!-- RIBBON (optional) -->
-                    <CommandBar Grid.Row="2"
-                x:Name="RibbonBar"
-                DefaultLabelPosition="Right">
+                    <CommandBar x:Name="RibbonBar" Grid.Row="2" DefaultLabelPosition="Right">
                         <AppBarButton Icon="Refresh" Label="Reload"/>
                         <AppBarButton Icon="Copy" Label="Copy Code"/>
                         <AppBarButton Icon="Help" Label="Docs"/>
                     </CommandBar>
 
                     <!-- CONTENT -->
-                    <Frame Grid.Row="3" x:Name="ContentFrame"/>
+                    <Frame x:Name="ContentFrame" Grid.Row="3" >
+                    </Frame>
                 </Grid>
 
-                <!--<Grid RowDefinitions="Auto,*">
+                <!-- <PathIcon Width="28" Height="28">
+                            <PathIcon.Data>
+                                <GeometryGroup>
+                                    <LineGeometry StartPoint="14,2" EndPoint="14,18"/>
+                                    <LineGeometry StartPoint="14,18" EndPoint="8,26"/>
+                                    <LineGeometry StartPoint="14,18" EndPoint="20,26"/>
+                                </GeometryGroup>
+                            </PathIcon.Data>
+                        </PathIcon> -->
+                <!-- <Grid RowDefinitions="Auto,*">
                             <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" 
                             Height="80"
                             Padding="20"
@@ -92,33 +102,25 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-
-                            -->
-                <!-- Rest der App -->
-                <!--
-                        </Grid>-->
+                        </Grid> -->
 
 
-                <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <HorizontalAlignment="Center" 
-                               VerticalAlignment="Center" />
-                </StackPanel>-->
+                <!-- <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                     <HorizontalAlignment="Center" VerticalAlignment="Center" />
+                     </StackPanel> -->
 
 
-                <!--<Border Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
-                    <TextBlock HorizontalAlignment="Center" 
-                               VerticalAlignment="Center" 
-                               Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
-                </Border>
+                <!-- <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
+                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
+                     </Border>
 
-                <Border Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
+                    <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
                     <TextBlock HorizontalAlignment="Center" 
                                VerticalAlignment="Center" 
                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                 </Border>-->
                 <!-- The contentFrame is well known as the Home screen -->
-                <!-- -->
-                <!-- insert paste here -->
             </Frame>
         </NavigationView>
     </Grid>
