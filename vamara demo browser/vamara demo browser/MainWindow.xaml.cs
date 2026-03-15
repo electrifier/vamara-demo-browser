@@ -1,5 +1,6 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using System;
 using System.Text;
 
@@ -29,13 +30,18 @@ public sealed partial class MainWindow : Window
 
     }
 
+//    private void OnHeaderTapped(object sender, TappedRoutedEventArgs e)
+//    {
+//        NavView.SelectedItem = null;
+//        ContentFrame.Navigate(typeof(StartPage));
+//    }
 
-        //this.navigationView.SelectionChanged += NavigationView_SelectionChanged;
+    //this.navigationView.SelectionChanged += NavigationView_SelectionChanged;
 
-        // "NavigationView_SelectionChanged";    
-        // TODO: Add event handlers for navigation view selection changes and settings selection
-        // 
-    
+    // "NavigationView_SelectionChanged";    
+    // TODO: Add event handlers for navigation view selection changes and settings selection
+    // 
+
 
     //private void InitializeComponent()
     //{

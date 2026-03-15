@@ -1,48 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window
-    x:Class="vamara_demo_browser.MainWindow"
-    xmlns:local="using:vamara_demo_browser"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    mc:Ignorable="d"
-    Title="vamara. interop with pleasure. demo browser beta build">
-
+<Window x:Class="vamara_demo_browser.MainWindow"
+        xmlns:local="using:vamara_demo_browser"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        mc:Ignorable="d"
+        Title="vamara. interop with pleasure. demo browser beta build">
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
-
     <Grid>
-        <NavigationView x:Name="RootNavigationView" >
+        <NavigationView x:Name="RootNavigationView" AlwaysShowHeader="True" ExpandedModeThresholdWidth="420" Header="Header" IsBackButtonVisible="Auto" IsBackEnabled="True" IsSettingsVisible="True" IsTabStop="False" PaneDisplayMode="Left" PaneTitle="Vana" SelectionChanged="NavigationView_SelectionChanged" SelectionFollowsFocus="Disabled">
+            <NavigationView.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="Vana" FontSize="28" FontWeight="SemiBold" Margin="12,0"/>
+                    <!-- todo: Tapped="OnHeaderTapped" -->
+                </DataTemplate>
+            </NavigationView.HeaderTemplate>
             <NavigationView.MenuItems>
-                <NavigationViewItem Tag="Vana-Sthala">
-                    <NavigationViewItem.Icon>
-                        <PathIcon>
-                            <PathIcon.Data>
-                                <GeometryGroup>
-                                    <LineGeometry StartPoint="6,4" EndPoint="6,16"/>
-                                    <LineGeometry StartPoint="12,2" EndPoint="12,18"/>
-                                    <LineGeometry StartPoint="18,4" EndPoint="18,16"/>
-                                </GeometryGroup>
-                            </PathIcon.Data>
-                        </PathIcon>
-                    </NavigationViewItem.Icon>
-                    <NavigationViewItem.Content>Vana</NavigationViewItem.Content>
-                </NavigationViewItem>
-
-                <!--<NavigationViewItem Icon="World"                  Content="Vana"                Tag="Vana-Sthala"  />-->
-                <NavigationViewItem Icon="Save"                   Content="Windows Forms"       Tag="Windows Forms Controls"  />
-                <NavigationViewItem Icon="ProtectedDocument"      Content="Docs"                Tag="Documentation"  />
+                <NavigationViewItem Icon="Document"               Content="Docs"                Tag="Documentation"  />
                 <NavigationViewItem Icon="Calendar"               Content="History"             Tag="History"  />
-                <NavigationViewItem Icon="Bullets"                Content="Bulb"                Tag="suggest a feature..." />
                 <NavigationViewItem Icon="Download"               Content="Packages on NuGet"   Tag="Download packages from NGet" />
+                <NavigationViewItem Icon="Save"                   Content="Windows Forms"       Tag="Windows Forms Controls"  />
+                <NavigationViewItem Icon="Bullets"                Content="Bulb"                Tag="suggest a feature..." />
                 <NavigationViewItem Icon="Admin"                  Content="Copilot"             Tag="Use Copilot" />
                 <NavigationViewItem Icon="GlobalNavigationButton" Content="GitHub Client"       Tag="Use GitHub client" />
-                <!-- Friday, 13th of March 2026 -->
                 <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
                 <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
             </NavigationView.MenuItems>
+            <!--<NavigationViewItem Tag="Vana-Sthala"> <NavigationViewItem.Icon> <PathIcon> <PathIcon.Data> <GeometryGroup> <LineGeometry StartPoint="6,4" EndPoint="6,16"/> <LineGeometry StartPoint="12,2" EndPoint="12,18"/> <LineGeometry StartPoint="18,4" EndPoint="18,16"/> </GeometryGroup> </PathIcon.Data> </PathIcon> </NavigationViewItem.Icon> <NavigationViewItem.Content>Vana</NavigationViewItem.Content> </NavigationViewItem>-->
+            <!--<NavigationViewItem Icon="World"                  Content="Vana"                Tag="Vana-Sthala"  />-->
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
             <!-- <NavigationCacheMode>Enabled</NavigationCacheMode>-->
             <!-- <NavigationCacheMode="Enabled"/>-->
