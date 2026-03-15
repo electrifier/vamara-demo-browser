@@ -16,32 +16,28 @@ public sealed partial class MainWindow : Window
 {
     public MainWindow()
     {
-        this.InitializeComponent();
+        InitializeComponent();
 
-        // NavigationView initialisiert → jetzt direkt zur AboutPage navigieren
-        RootNavigationView.Loaded += (_, __) =>
-        {
-//            RootNavigationView.SelectedItem = RootNavigationView.MenuItems
-//                .OfType<NavigationViewItem>()
-//                .FirstOrDefault(i => (string)i.Tag == "AboutPage");
-//
-//            ContentFrame.Navigate(typeof(Pages.AboutPage));
-        };
+        RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
 
+
+        // TODO: Add event handlers for navigation view selection changes and settings selection
+        //        // NavigationView initialisiert → jetzt direkt zur AboutPage navigieren
+        //        RootNavigationView.Loaded += (_, __) =>
+        //        {
+        ////            RootNavigationView.SelectedItem = RootNavigationView.MenuItems
+        ////                .OfType<NavigationViewItem>()
+        ////                .FirstOrDefault(i => (string)i.Tag == "AboutPage");
+        ////
+        ////            ContentFrame.Navigate(typeof(Pages.AboutPage));
+        //        };
     }
 
-//    private void OnHeaderTapped(object sender, TappedRoutedEventArgs e)
-//    {
-//        NavView.SelectedItem = null;
-//        ContentFrame.Navigate(typeof(StartPage));
-//    }
-
-    //this.navigationView.SelectionChanged += NavigationView_SelectionChanged;
-
-    // "NavigationView_SelectionChanged";    
-    // TODO: Add event handlers for navigation view selection changes and settings selection
-    // 
-
+    //    private void OnHeaderTapped(object sender, TappedRoutedEventArgs e)
+    //    {
+    //        NavView.SelectedItem = null;
+    //        ContentFrame.Navigate(typeof(StartPage));
+    //    }
 
     //private void InitializeComponent()
     //{
