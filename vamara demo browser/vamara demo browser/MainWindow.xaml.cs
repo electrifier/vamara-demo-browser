@@ -1,17 +1,12 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Input;
 using System;
+using System.Diagnostics;
 using System.Text;
-
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace vamara_demo_browser;
 
-/// <summary>
-/// An empty window that can be used on its own or navigated to within a Frame.
-/// </summary>
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public sealed partial class MainWindow : Window
 {
     public MainWindow()
@@ -32,6 +27,16 @@ public sealed partial class MainWindow : Window
         ////            ContentFrame.Navigate(typeof(Pages.AboutPage));
         //        };
     }
+
+    // protected override void OnActivated(WindowActivatedEventArgs args)
+    // {
+    //     base.OnActivated(args);
+    //     if (args.WindowActivationState == WindowActivationState.CodeActivated ||
+    //         args.WindowActivationState == WindowActivationState.PointerActivated)
+    //     {
+    //         this.AppWindow.Resize(new Windows.Graphics.SizeInt32(Width, Height));
+    //     }
+    // }
 
     //    private void OnHeaderTapped(object sender, TappedRoutedEventArgs e)
     //    {
@@ -64,6 +69,11 @@ public sealed partial class MainWindow : Window
             throw;
         }
 
+    }
+
+    private string GetDebuggerDisplay()
+    {
+        return ToString();
     }
 
     // StringBuilder sb = new();

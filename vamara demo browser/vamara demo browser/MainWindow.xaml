@@ -13,14 +13,13 @@
     </Window.SystemBackdrop>
     <Grid>
         <NavigationView x:Name="RootNavigationView" 
-                        AlwaysShowHeader="True" 
-                        ExpandedModeThresholdWidth="320" 
-                        Header="Vanara Header" 
-                        IsBackButtonVisible="Auto" 
-                        IsBackEnabled="True" 
-                        IsSettingsVisible="True" 
-                        IsTabStop="False" 
-                        PaneDisplayMode="Left" 
+                        AlwaysShowHeader="False"
+                        ExpandedModeThresholdWidth="256"
+                        Header="Vanara Header"
+                        IsBackButtonVisible="Auto"
+                        IsBackEnabled="True"
+                        IsSettingsVisible="True"
+                        PaneDisplayMode="Left"
                         PaneTitle="Vana`ra" 
                         SelectionChanged="NavigationView_SelectionChanged" 
                         SelectionFollowsFocus="Disabled">
@@ -35,9 +34,10 @@
                 <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents"/>
                 <NavigationViewItem Icon="Calendar" Content="History" Tag="History"  />
                 <NavigationViewItemSeparator/>
-                <NavigationViewItem Icon="Download" Content="Download Packages from NuGet" Tag="Download from NuGet"/>
+                <NavigationViewItem Icon="Download" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
+                <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to GitHub..."/>
                 <!-- TODO: Where's :octocat ? -->
-                <NavigationViewItem Icon="GlobalNavigationButton" Content="GitHub Client" Tag="Use GitHub client" IsEnabled="False"/>
+                <NavigationViewItem Icon="Microphone" Content="GitHub Client" Tag="Use GitHub client" IsEnabled="False"/>
             </NavigationView.MenuItems>
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
             <!-- <NavigationCacheMode="Enabled"/> -->
@@ -52,7 +52,11 @@
                             <Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Border>
-
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ItemsRepeater>
+                            
+                        </ItemsRepeater>
+                    </StackPanel>
                     <!-- TABVIEW -->
                     <TabView x:Name="MainTabs" Grid.Row="1" IsAddTabButtonVisible="False" Visibility="Collapsed">
                         <!--<TabViewItem Header="Overview"/>
@@ -103,13 +107,6 @@
                                 </StackPanel>
                             </Border>
                         </Grid> -->
-
-
-                <!-- <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                     <HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                     </StackPanel> -->
-
-
                 <!-- <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
                      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
