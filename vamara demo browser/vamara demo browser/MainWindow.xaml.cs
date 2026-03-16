@@ -13,7 +13,7 @@ public sealed partial class MainWindow : Window
     {
         InitializeComponent();
 
-        RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
+        //RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
 
 
         // TODO: Add event handlers for navigation view selection changes and settings selection

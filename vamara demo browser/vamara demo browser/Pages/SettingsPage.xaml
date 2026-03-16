@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="VanaraDemo.Modules.Settings.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:VanaraDemo.Modules.Settings"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:SettingsViewModel />
+    </Page.DataContext>
+
+    <ScrollViewer>
+        <StackPanel Spacing="32" Padding="24">
+            <!-- Header -->
+            <TextBlock
+                Text="Settings"
+                Style="{StaticResource TitleLargeTextBlockStyle}" />
+            <!-- Appearance Section -->
+            <StackPanel Spacing="12">
+                <TextBlock
+                    Text="Appearance"
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+
+                <ComboBox
+                    Header="Theme"
+                    ItemsSource="{x:Bind ViewModel.Themes}"
+                    SelectedItem="{x:Bind ViewModel.SelectedTheme, Mode=TwoWay}"
+                    HorizontalAlignment="Stretch" />
+            </StackPanel>
+            <!-- Language Section -->
+            <StackPanel Spacing="12">
+                <TextBlock
+                    Text="Language"
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+
+                <ComboBox
+                    Header="App Language"
+                    ItemsSource="{x:Bind ViewModel.Languages}"
+                    SelectedItem="{x:Bind ViewModel.SelectedLanguage, Mode=TwoWay}"
+                    HorizontalAlignment="Stretch" />
+            </StackPanel>
+            <!-- App Info Section -->
+            <StackPanel Spacing="12">
+                <TextBlock
+                    Text="App Info"
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
+
+                <TextBlock Text="Vanara Demo Browser" />
+                <TextBlock Text="{x:Bind ViewModel.AppVersion}" />
+
+                <HyperlinkButton
+                    Content="GitHub Repository"
+                    NavigateUri="https://github.com/electrifier/vanara-demo" />
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
