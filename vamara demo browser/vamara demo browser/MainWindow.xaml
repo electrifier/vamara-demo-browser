@@ -20,45 +20,43 @@
                         IsBackEnabled="True"
                         IsSettingsVisible="True"
                         PaneDisplayMode="Left"
-                        PaneTitle="Vana`ra" 
+                        PaneTitle="Vana"
                         SelectionChanged="NavigationView_SelectionChanged" 
                         SelectionFollowsFocus="Disabled">
             <NavigationView.HeaderTemplate>
                 <DataTemplate>
-                    <TextBlock Text="Vanara" FontSize="28" FontWeight="SemiBold" Margin="12,0"/>
-                    <!-- add link: https://github.com/tajbender/WinClassicSamplesCS/tree/master -->
+                    <!--<TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
+                    <HyperlinkButton Content="Microsoft home page" NavigateUri="https://github.com/tajbender/WinClassicSamplesCS" />-->
                     <!-- todo: Tapped="OnHeaderTapped" -->
                 </DataTemplate>
             </NavigationView.HeaderTemplate>
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents"/>
+                <TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
+                <HyperlinkButton Content="Vanara on gitHub" NavigateUri="https://github.com/tajbender/WinClassicSamplesCS" />
+                <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
                 <NavigationViewItem Icon="Calendar" Content="History" Tag="History"  />
-                <NavigationViewItemSeparator/>
-                <NavigationViewItem Icon="Download" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
-                <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to GitHub..."/>
+                <NavigationViewItemSeparator />
+                <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" /><!-- https://github.com/dahall/Vanara -->
+                <NavigationViewItem Icon="Download" IsEnabled="False" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
+                <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="GitHub Client" Tag="Use GitHub client" />
                 <!-- TODO: Where's :octocat ? -->
-                <NavigationViewItem Icon="Microphone" Content="GitHub Client" Tag="Use GitHub client" IsEnabled="False"/>
             </NavigationView.MenuItems>
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
             <!-- <NavigationCacheMode="Enabled"/> -->
-            <Frame x:Name="navigationViewContentFrame">
+            <Frame x:Name="RootNavigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
                     <!-- HEADER -->
-                    <Border Grid.Row="0" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
+                    <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
+                            <Image Width="256" Source="/Assets/VanaraHeading.png" />
                             <!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
                             <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
                             <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>-->
                             <Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Border>
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <ItemsRepeater>
-                            
-                        </ItemsRepeater>
-                    </StackPanel>
                     <!-- TABVIEW -->
-                    <TabView x:Name="MainTabs" Grid.Row="1" IsAddTabButtonVisible="False" Visibility="Collapsed">
+                    <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" Visibility="Collapsed">
                         <!--<TabViewItem Header="Overview"/>
                             <TabViewItem Header="Packages"/>
                             <TabViewItem Header="Interop"/>
@@ -66,22 +64,26 @@
                             <TabViewItem Header="Windowing"/>
                             <TabViewItem Header="Composition"/>-->
                     </TabView>
-
                     <!-- RIBBON (optional) -->
-                    <CommandBar x:Name="RibbonBar" Grid.Row="2" DefaultLabelPosition="Right">
+                    <CommandBar x:Name="RibbonBar" Grid.Row="3" DefaultLabelPosition="Right">
                         <AppBarButton Icon="Refresh" Label="Reload"/>
                         <AppBarButton Icon="Copy" Label="Copy Code"/>
                         <AppBarButton Icon="Help" Label="Docs"/>
                     </CommandBar>
 
+
                     <!-- CONTENT -->
-                    <Frame x:Name="ContentFrame" Grid.Row="3" >
+                    <Frame x:Name="ContentFrame" Grid.Row="4" >
                         <!--<Image Source="Assets/octocat.png" Width="64" Height="64"/>
                         <Image Source="ms-appx:///Assets/octocat.svg"/>-->
                     </Frame>
                 </Grid>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Window>
 
-                <!-- <PathIcon Width="28" Height="28">
+<!-- <PathIcon Width="28" Height="28">
                             <PathIcon.Data>
                                 <GeometryGroup>
                                     <LineGeometry StartPoint="14,2" EndPoint="14,18"/>
@@ -118,7 +120,3 @@
                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                 </Border>-->
                 <!-- The contentFrame is well known as the Home screen -->
-            </Frame>
-        </NavigationView>
-    </Grid>
-</Window>
