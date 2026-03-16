@@ -57,18 +57,16 @@ public sealed partial class MainWindow : Window
 
         try
         {
-            //                if (args.IsSettingsSelected)
-            //                {
-            //                    // Handle settings selection
-            //                    return;
-            //                }
+            if (args.IsSettingsSelected)
+            {
+                // Handle settings selection
+                return;
+            }
         }
         catch (Exception)
         {
-
             throw;
         }
-
     }
 
     private string GetDebuggerDisplay()

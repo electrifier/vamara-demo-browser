@@ -48,11 +48,10 @@
                     <!-- HEADER -->
                     <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
-                            <Image Width="256" Source="/Assets/VanaraHeading.png" />
+                            <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
                             <!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
                             <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
                             <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>-->
-                            <Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Border>
                     <!-- TABVIEW -->
