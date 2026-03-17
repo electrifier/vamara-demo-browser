@@ -1,41 +1,48 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
+using System.Diagnostics;
 using System.Text;
-
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
 
 namespace vamara_demo_browser;
 
-/// <summary>
-/// An empty window that can be used on its own or navigated to within a Frame.
-/// </summary>
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public sealed partial class MainWindow : Window
 {
     public MainWindow()
     {
-        this.InitializeComponent();
+        InitializeComponent();
 
-        // NavigationView initialisiert → jetzt direkt zur AboutPage navigieren
-        RootNavigationView.Loaded += (_, __) =>
-        {
-//            RootNavigationView.SelectedItem = RootNavigationView.MenuItems
-//                .OfType<NavigationViewItem>()
-//                .FirstOrDefault(i => (string)i.Tag == "AboutPage");
-//
-//            ContentFrame.Navigate(typeof(Pages.AboutPage));
-        };
+        //RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
 
+
+        // TODO: Add event handlers for navigation view selection changes and settings selection
+        //        // NavigationView initialisiert → jetzt direkt zur AboutPage navigieren
+        //        RootNavigationView.Loaded += (_, __) =>
+        //        {
+        ////            RootNavigationView.SelectedItem = RootNavigationView.MenuItems
+        ////                .OfType<NavigationViewItem>()
+        ////                .FirstOrDefault(i => (string)i.Tag == "AboutPage");
+        ////
+        ////            ContentFrame.Navigate(typeof(Pages.AboutPage));
+        //        };
     }
 
+    // protected override void OnActivated(WindowActivatedEventArgs args)
+    // {
+    //     base.OnActivated(args);
+    //     if (args.WindowActivationState == WindowActivationState.CodeActivated ||
+    //         args.WindowActivationState == WindowActivationState.PointerActivated)
+    //     {
+    //         this.AppWindow.Resize(new Windows.Graphics.SizeInt32(Width, Height));
+    //     }
+    // }
 
-        //this.navigationView.SelectionChanged += NavigationView_SelectionChanged;
-
-        // "NavigationView_SelectionChanged";    
-        // TODO: Add event handlers for navigation view selection changes and settings selection
-        // 
-    
+    //    private void OnHeaderTapped(object sender, TappedRoutedEventArgs e)
+    //    {
+    //        NavView.SelectedItem = null;
+    //        ContentFrame.Navigate(typeof(StartPage));
+    //    }
 
     //private void InitializeComponent()
     //{
@@ -50,18 +57,21 @@ public sealed partial class MainWindow : Window
 
         try
         {
-            //                if (args.IsSettingsSelected)
-            //                {
-            //                    // Handle settings selection
-            //                    return;
-            //                }
+            if (args.IsSettingsSelected)
+            {
+                // Handle settings selection
+                return;
+            }
         }
         catch (Exception)
         {
-
             throw;
         }
+    }
 
+    private string GetDebuggerDisplay()
+    {
+        return ToString();
     }
 
     // StringBuilder sb = new();

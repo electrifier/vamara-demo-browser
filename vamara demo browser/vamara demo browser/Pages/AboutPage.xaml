@@ -7,13 +7,12 @@
       mc:Ignorable="d">
 
     <Grid Padding="32" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="24">
-
         <!-- Header -->
         <StackPanel>
             <TextBlock Text="Vanara Demo Browser"
                        Style="{StaticResource TitleLargeTextBlockStyle}"
                        Margin="0,0,0,4"/>
-            <TextBlock Text="Vanara your friend and bridge to Win32."
+            <TextBlock Text="bridge to Win32"
                        Style="{StaticResource BodyStrongTextBlockStyle}"
                        Opacity="0.75"/>
         </StackPanel>
@@ -25,21 +24,15 @@
                     Padding="20"
                     Shadow="{ThemeResource ShadowElevation2}">
                 <StackPanel Spacing="8">
-                    <TextBlock Text="App-Informationen"
-                               Style="{StaticResource SubtitleTextBlockStyle}"/>
-
+                    <TextBlock Text="App-Informationen" Style="{StaticResource SubtitleTextBlockStyle}"/>
                     <!--<StackPanel Orientation="Horizontal" Spacing="12">
                         <SymbolIcon Symbol="Info"/>
                         <TextBlock Text="{x:Bind ViewModel.AppVersion, Mode=OneWay}"
-                                   Style="{StaticResource BodyTextBlockStyle}"/>
-                    </StackPanel>-->
-
+                                   Style="{StaticResource BodyTextBlockStyle}"/></StackPanel>-->
                     <!--<StackPanel Orientation="Horizontal" Spacing="12">
                         <SymbolIcon Symbol="Calendar"/>
                         <TextBlock Text="{x:Bind ViewModel.BuildInfo, Mode=OneWay}"
-                                   Style="{StaticResource BodyTextBlockStyle}"/>
-                    </StackPanel>-->
-
+                                   Style="{StaticResource BodyTextBlockStyle}"/></StackPanel>-->
                     <StackPanel Orientation="Horizontal" Spacing="12">
                         <SymbolIcon Symbol="Link"/>
                         <HyperlinkButton Content="GitHub Repository"
@@ -91,7 +84,6 @@
                 </StackPanel>
             </Border>
         </Grid>
-
     </Grid>
 </Page>
 
@@ -150,19 +142,18 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-        </Grid>
-
-        --><!-- Vanara Assemblies --><!--
-        <Grid Grid.Row="2">
-            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+        </Grid> -->
+        <!-- Vanara Assemblies -->
+        <!-- <Grid Grid.Row="2">
+             <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                     CornerRadius="12"
                     Padding="20"
                     Shadow="{ThemeResource ShadowElevation2}">
                 <StackPanel Spacing="12">
                     <TextBlock Text="Vanara Bibliotheken"
-                               Style="{StaticResource SubtitleTextBlockStyle}"/>
-
-                    --><!--<ItemsRepeater ItemsSource="{x:Bind ViewModel.VanaraAssemblies, Mode=OneWay}">
+                               Style="{StaticResource SubtitleTextBlockStyle}"/>-->
+                    <!--
+                        <ItemsRepeater ItemsSource="{x:Bind ViewModel.VanaraAssemblies, Mode=OneWay}">
                         <ItemsRepeater.ItemTemplate>
                             <DataTemplate x:DataType="models:VanaraAssemblyInfo">
                                 <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,4">
@@ -172,28 +163,25 @@
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsRepeater.ItemTemplate>
-                    </ItemsRepeater>--><!--
-                </StackPanel>
-            </Border>
-        </Grid>
-
-        --><!-- Vanara Meditation --><!--
-        <Grid Grid.Row="3">
-            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                    CornerRadius="12"
-                    Padding="20"
-                    Shadow="{ThemeResource ShadowElevation2}">
-                <StackPanel>
-                    <TextBlock Text="Vanara Meditation"
-                               Style="{StaticResource SubtitleTextBlockStyle}"
-                               Margin="0,0,0,8"/>
-                    --><!--<TextBlock Text="{x:Bind ViewModel.MeditationText, Mode=OneWay}"
-                               Style="{StaticResource BodyItalicTextBlockStyle}"
-                               Opacity="0.85"
-                               TextWrapping="Wrap"/>--><!--
-                </StackPanel>
-            </Border>
-        </Grid>
-
-    </Grid>-->
+                    </ItemsRepeater> -->
+                <!-- </StackPanel>
+             </Border>
+             </Grid>-->
+        <!-- Vanara Meditation -->
+        <!-- <Grid Grid.Row="3">
+                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                        CornerRadius="12"
+                        Padding="20"
+                        Shadow="{ThemeResource ShadowElevation2}">
+                    <StackPanel>
+                        <TextBlock Text="Vanara Meditation"
+                                   Style="{StaticResource SubtitleTextBlockStyle}"
+                                   Margin="0,0,0,8"/> -->
+                        <!-- <TextBlock Text="{x:Bind ViewModel.MeditationText, Mode=OneWay}"
+                                   Style="{StaticResource BodyItalicTextBlockStyle}"
+                                   Opacity="0.85"
+                                   TextWrapping="Wrap"/> --><!--
+                    </StackPanel>
+                </Border>
+             </Grid> -->
 

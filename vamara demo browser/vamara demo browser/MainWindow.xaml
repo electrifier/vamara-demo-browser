@@ -1,83 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window
-    x:Class="vamara_demo_browser.MainWindow"
-    xmlns:local="using:vamara_demo_browser"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    mc:Ignorable="d"
-    Title="vamara. interop with pleasure. demo browser beta build">
-
+<Window x:Class="vamara_demo_browser.MainWindow"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="using:vamara_demo_browser"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        mc:Ignorable="d"
+        Title="vamara. interop with pleasure. demo browser beta build">
+    <!-- ExtendsContentIntoTitleBar="True" -->
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
-
     <Grid>
-        <NavigationView x:Name="RootNavigationView" >
+        <NavigationView x:Name="RootNavigationView" 
+                        AlwaysShowHeader="False"
+                        ExpandedModeThresholdWidth="256"
+                        Header="Vanara Header"
+                        IsBackButtonVisible="Auto"
+                        IsBackEnabled="True"
+                        IsSettingsVisible="True"
+                        PaneDisplayMode="Left"
+                        PaneTitle="Vana"
+                        SelectionChanged="NavigationView_SelectionChanged" 
+                        SelectionFollowsFocus="Disabled">
+            <NavigationView.HeaderTemplate>
+                <DataTemplate>
+                    <!--<TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
+                    <HyperlinkButton Content="Microsoft home page" NavigateUri="https://github.com/tajbender/WinClassicSamplesCS" />-->
+                    <!-- todo: Tapped="OnHeaderTapped" -->
+                </DataTemplate>
+            </NavigationView.HeaderTemplate>
             <NavigationView.MenuItems>
-                <NavigationViewItem Tag="Vana-Sthala">
-                    <NavigationViewItem.Icon>
-                        <PathIcon>
-                            <PathIcon.Data>
-                                <GeometryGroup>
-                                    <LineGeometry StartPoint="6,4" EndPoint="6,16"/>
-                                    <LineGeometry StartPoint="12,2" EndPoint="12,18"/>
-                                    <LineGeometry StartPoint="18,4" EndPoint="18,16"/>
-                                </GeometryGroup>
-                            </PathIcon.Data>
-                        </PathIcon>
-                    </NavigationViewItem.Icon>
-                    <NavigationViewItem.Content>Vana</NavigationViewItem.Content>
-                </NavigationViewItem>
-
-                <!--<NavigationViewItem Icon="World"                  Content="Vana"                Tag="Vana-Sthala"  />-->
-                <NavigationViewItem Icon="Save"                   Content="Windows Forms"       Tag="Windows Forms Controls"  />
-                <NavigationViewItem Icon="ProtectedDocument"      Content="Docs"                Tag="Documentation"  />
-                <NavigationViewItem Icon="Calendar"               Content="History"             Tag="History"  />
-                <NavigationViewItem Icon="Bullets"                Content="Bulb"                Tag="suggest a feature..." />
-                <NavigationViewItem Icon="Download"               Content="Packages on NuGet"   Tag="Download packages from NGet" />
-                <NavigationViewItem Icon="Admin"                  Content="Copilot"             Tag="Use Copilot" />
-                <NavigationViewItem Icon="GlobalNavigationButton" Content="GitHub Client"       Tag="Use GitHub client" />
-                <!-- Friday, 13th of March 2026 -->
-                <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
-                <NavigationViewItem Icon="Upload"                 Content="Bulb"                Tag="submit a bug..." />
+                <TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
+                <HyperlinkButton Content="Vanara on gitHub" NavigateUri="https://github.com/tajbender/WinClassicSamplesCS" />
+                <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
+                <NavigationViewItem Icon="Calendar" Content="History" Tag="History"  />
+                <NavigationViewItemSeparator />
+                <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" /><!-- https://github.com/dahall/Vanara -->
+                <NavigationViewItem Icon="Download" IsEnabled="False" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
+                <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="GitHub Client" Tag="Use GitHub client" />
+                <!-- TODO: Where's :octocat ? -->
             </NavigationView.MenuItems>
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
-            <!-- <NavigationCacheMode>Enabled</NavigationCacheMode>-->
-            <!-- <NavigationCacheMode="Enabled"/>-->
-            <Frame x:Name="navigationViewContentFrame">
+            <!-- <NavigationCacheMode="Enabled"/> -->
+            <Frame x:Name="RootNavigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
                     <!-- HEADER -->
-                    <Border Grid.Row="0" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
+                    <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
+                            <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                            <!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
                             <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
-                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>
+                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>-->
                         </StackPanel>
                     </Border>
                     <!-- TABVIEW -->
-                    <TabView x:Name="MainTabs" Grid.Row="1" IsAddTabButtonVisible="False">
-                        <TabViewItem Header="Overview"/>
-                        <TabViewItem Header="Packages"/>
-                        <TabViewItem Header="Interop"/>
-                        <TabViewItem Header="Shell"/>
-                        <TabViewItem Header="Windowing"/>
-                        <TabViewItem Header="Composition"/>
+                    <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" Visibility="Collapsed">
+                        <!--<TabViewItem Header="Overview"/>
+                            <TabViewItem Header="Packages"/>
+                            <TabViewItem Header="Interop"/>
+                            <TabViewItem Header="Shell"/>
+                            <TabViewItem Header="Windowing"/>
+                            <TabViewItem Header="Composition"/>-->
                     </TabView>
-
                     <!-- RIBBON (optional) -->
-                    <CommandBar x:Name="RibbonBar" Grid.Row="2" DefaultLabelPosition="Right">
+                    <CommandBar x:Name="RibbonBar" Grid.Row="3" DefaultLabelPosition="Right">
                         <AppBarButton Icon="Refresh" Label="Reload"/>
                         <AppBarButton Icon="Copy" Label="Copy Code"/>
                         <AppBarButton Icon="Help" Label="Docs"/>
                     </CommandBar>
 
+
                     <!-- CONTENT -->
-                    <Frame x:Name="ContentFrame" Grid.Row="3" >
+                    <Frame x:Name="ContentFrame" Grid.Row="4" >
+                        <!--<Image Source="Assets/octocat.png" Width="64" Height="64"/>
+                        <Image Source="ms-appx:///Assets/octocat.svg"/>-->
                     </Frame>
                 </Grid>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Window>
 
-                <!-- <PathIcon Width="28" Height="28">
+<!-- <PathIcon Width="28" Height="28">
                             <PathIcon.Data>
                                 <GeometryGroup>
                                     <LineGeometry StartPoint="14,2" EndPoint="14,18"/>
@@ -103,13 +108,6 @@
                                 </StackPanel>
                             </Border>
                         </Grid> -->
-
-
-                <!-- <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                     <HorizontalAlignment="Center" VerticalAlignment="Center" />
-                     </StackPanel> -->
-
-
                 <!-- <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
                      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
@@ -121,7 +119,3 @@
                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                 </Border>-->
                 <!-- The contentFrame is well known as the Home screen -->
-            </Frame>
-        </NavigationView>
-    </Grid>
-</Window>

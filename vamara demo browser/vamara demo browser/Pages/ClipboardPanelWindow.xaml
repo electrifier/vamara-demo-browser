@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="vamara_demo_browser.Pages.ClipboardPanel"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="using:vamara_demo_browser.Pages"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        mc:Ignorable="d"
+        Title="ClipboardPanelWindow">
+
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid>
+        <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+            Padding="16">
+            <StackPanel>
+                <TextBlock Text="Clipboard" FontSize="28" FontWeight="Bold"/>
+                <TextBlock Text="The Clipboard class provides methods to place data on and retrieve data from the system clipboard." Opacity="0.7"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
