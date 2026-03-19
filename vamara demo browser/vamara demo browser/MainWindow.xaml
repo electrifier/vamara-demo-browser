@@ -48,12 +48,17 @@
                     <!-- HEADER -->
 
                     <Grid x:Name="HeaderRoot" Height="200">
-                        <!-- Hintergrund-Ebene -->
-                        <Image x:Name="BackgroundLayer" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" Stretch="UniformToFill" />
-                        <!-- Vordergrund-Ebene -->
-                        <StackPanel x:Name="ForegroundLayer" VerticalAlignment="Center" Padding="24">
-                            <TextBlock Text="Settings" Style="{StaticResource TitleLargeTextBlockStyle}"/>
-                        </StackPanel>
+
+                        <!-- Normal Header -->
+                        <Grid x:Name="HeaderContent">
+                            <Image x:Name="BackgroundLayer" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" Stretch="UniformToFill" />
+                            <!-- Parallax Layer: foreground -->
+                            <StackPanel x:Name="ForegroundLayer" VerticalAlignment="Center" Padding="24">
+                                <TextBlock Text="Settings" Style="{StaticResource TitleLargeTextBlockStyle}"/>
+                            </StackPanel>
+                            <!-- Easter Egg Game Layer -->
+                            <Canvas x:Name="GameLayer" Visibility="Collapsed" IsHitTestVisible="False" />
+                        </Grid>
                     </Grid>
 
 
