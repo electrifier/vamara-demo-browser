@@ -23,6 +23,10 @@ public sealed partial class MainWindow : Window
         Debug.IndentLevel += 2;
         InitializeComponent();
 
+
+        //var sun = _sunService.GetSunPosition(DateTimeOffset.Now, lat, lon);
+
+
         // Loaded += OnLoaded;
         // Window.Current.SizeChanged += OnWindowSizeChanged;
 
