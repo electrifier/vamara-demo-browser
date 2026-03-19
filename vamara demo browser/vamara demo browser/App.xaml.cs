@@ -1,12 +1,12 @@
 ﻿using Microsoft.UI.Xaml;
 
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 namespace vamara_demo_browser;
 
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
+/// 
+/// <b>Quote:</b> <i>To learn more about WinUI, the WinUI project structure, and more about
+/// our project templates, see: http://aka.ms/winui-project-info.</i>
 /// </summary>
 public partial class App : Application
 {

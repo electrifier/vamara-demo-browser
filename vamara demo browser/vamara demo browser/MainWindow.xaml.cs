@@ -1,11 +1,12 @@
 using Microsoft.UI.Composition;
-using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Hosting;
-using System;
+using Microsoft.UI.Xaml;
 using System.Diagnostics;
 using System.Numerics;
 using System.Text;
+using System;
+using vamara_demo_browser.Pages;
 
 namespace vamara_demo_browser;
 
@@ -18,10 +19,12 @@ public sealed partial class MainWindow : Window
 
     public MainWindow()
     {
+        Debug.WriteLine("MainWindow ctor()");
+        Debug.IndentLevel += 2;
         InitializeComponent();
 
-        //        Loaded += OnLoaded;
-//        Window.Current.SizeChanged += OnWindowSizeChanged;
+        // Loaded += OnLoaded;
+        // Window.Current.SizeChanged += OnWindowSizeChanged;
 
         //RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
 
@@ -36,6 +39,7 @@ public sealed partial class MainWindow : Window
         ////
         ////            ContentFrame.Navigate(typeof(Pages.AboutPage));
         //        };
+
     }
 
 
@@ -92,20 +96,36 @@ public sealed partial class MainWindow : Window
 
     private void RootNavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
     {
-        try
-        {
-            StringBuilder strBuf = new();
+//        try
+//        {
+//            if (args.IsSettingsSelected)
+//            {
+//                ContentFrame.Navigate(typeof(SettingsPage));
+//                return;
+//            }
+//
+//            if (args.SelectedItem is NavigationViewItem item)
+//            {
+//                switch (item.Tag)
+//                {
+//                    case "AboutPage":
+//                        ContentFrame.Navigate(typeof(AboutPage));
+//                        break;
+//
+//                    default:
+//                        break;
+//                }
+//            }
+//        }
+//        catch (Exception)
+//        {
+//            throw;
+//        }
+    }
 
-            if (args.IsSettingsSelected)
-            {
-                // Handle settings selection
-                return;
-            }
-        }
-        catch (Exception)
-        {
-            throw;
-        }
+    private void NavigationView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs args)
+    {
+        RootNavigationView_SelectionChanged(sender as NavigationView, args);
     }
 
     private string GetDebuggerDisplay()
