@@ -28,8 +28,8 @@ public class LocalizationService : ILocalizationService
 
     public LocalizationService()
     {
-//        CurrentLanguage = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride
-//                          ?? Windows.Globalization.ApplicationLanguages.Languages.First();
+        //        CurrentLanguage = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride
+        //                          ?? Windows.Globalization.ApplicationLanguages.Languages.First();
     }
 
     public void SetLanguage(string languageTag)
@@ -39,7 +39,7 @@ public class LocalizationService : ILocalizationService
 
         ApplicationLanguages.PrimaryLanguageOverride = languageTag;
 
-        // UI neu laden
+        // Reload UI
         if (App.MainWindow.Content is FrameworkElement root)
         {
             var newRoot = new AboutPage();
@@ -47,18 +47,22 @@ public class LocalizationService : ILocalizationService
         }
     }
 
-    /*
-
-    public void SetLanguage(string languageCode)
-    {
+    /*  public void SetLanguage(string languageCode) {
         if (languageCode == CurrentLanguage)
+            return;
+        if (!_languages.Contains(languageTag))
             return;
 
         Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = languageCode;
         CurrentLanguage = languageCode;
 
+            // UI neu laden
+        if (App.MainWindow.Content is FrameworkElement root)
+        {
+            var newRoot = new AboutPage();
+            App.MainWindow.Content = newRoot;
+        }
+
         LanguageChanged?.Invoke(this, EventArgs.Empty);
-    }     
-     
-     */
+        } */
 }
