@@ -17,6 +17,9 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
+		<Content Remove="Assets\.a.i. generated\Copilot\Copilot_20260315_191513.png" />
+		<Content Remove="Assets\.a.i. generated\Copilot\Copilot_20260315_191519.png" />
+		<Content Remove="Assets\.a.i. generated\Copilot\Sheep with coffee pot.png" />
 		<Content Remove="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
 		<Content Remove="Assets\Public Domain\License.md" />
 		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
@@ -77,7 +80,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Copilot_20260315_191513.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Copilot_20260315_191519.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Sheep with coffee pot.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
 	</ItemGroup>
 
 	<ItemGroup>
