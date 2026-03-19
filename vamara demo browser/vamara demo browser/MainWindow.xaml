@@ -39,6 +39,8 @@
                 <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" /><!-- https://github.com/dahall/Vanara -->
                 <NavigationViewItem Icon="Download" IsEnabled="False" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
                 <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="GitHub Client" Tag="Use GitHub client" />
+                <NavigationViewItemSeparator />
+                <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="Ressource Editor" Tag="Manager for Ressources in your own projects." />
                 <!-- TODO: Where's :octocat ? -->
             </NavigationView.MenuItems>
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
