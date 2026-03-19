@@ -1,7 +1,10 @@
+using Microsoft.UI.Composition;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Hosting;
 using System;
 using System.Diagnostics;
+using System.Numerics;
 using System.Text;
 
 namespace vamara_demo_browser;
@@ -9,9 +12,16 @@ namespace vamara_demo_browser;
 [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public sealed partial class MainWindow : Window
 {
+    private Compositor _compositor;
+    private SpriteVisual _bgVisual;
+    private SpriteVisual _fgVisual;
+
     public MainWindow()
     {
         InitializeComponent();
+
+        //        Loaded += OnLoaded;
+//        Window.Current.SizeChanged += OnWindowSizeChanged;
 
         //RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
 
@@ -27,6 +37,35 @@ public sealed partial class MainWindow : Window
         ////            ContentFrame.Navigate(typeof(Pages.AboutPage));
         //        };
     }
+
+
+
+    private void OnLoaded(object sender, RoutedEventArgs e)
+    {
+//        // TODO: 19/03/26 - Parallax-Effekt implementieren
+//        //        _compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
+//        //
+//        //        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
+//        //        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
+//        //
+//        //        UpdateParallax(Window.Current.Bounds.Width);
+    }
+
+    private void OnWindowSizeChanged(object sender, WindowSizeChangedEventArgs e)
+    {
+        UpdateParallax(e.Size.Width);
+    }
+
+    private void UpdateParallax(double width)
+    {
+        // Parallax-Faktor abhängig von Fensterbreite
+        float bgOffset = (float)(width * -0.02);   // Hintergrund bewegt sich wenig
+        float fgOffset = (float)(width * 0.04);    // Vordergrund bewegt sich stärker
+
+        _bgVisual.Offset = new Vector3(bgOffset, 0, 0);
+        _fgVisual.Offset = new Vector3(fgOffset, 0, 0);
+    }
+
 
     // protected override void OnActivated(WindowActivatedEventArgs args)
     // {

@@ -46,6 +46,17 @@
             <Frame x:Name="RootNavigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
                     <!-- HEADER -->
+
+                    <Grid x:Name="HeaderRoot" Height="200">
+                        <!-- Hintergrund-Ebene -->
+                        <Image x:Name="BackgroundLayer" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" Stretch="UniformToFill" />
+                        <!-- Vordergrund-Ebene -->
+                        <StackPanel x:Name="ForegroundLayer" VerticalAlignment="Center" Padding="24">
+                            <TextBlock Text="Settings" Style="{StaticResource TitleLargeTextBlockStyle}"/>
+                        </StackPanel>
+                    </Grid>
+
+
                     <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
                             <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>

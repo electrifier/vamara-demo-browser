@@ -17,6 +17,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
+		<Content Remove="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
 		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
 		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
 	</ItemGroup>
@@ -72,6 +73,10 @@
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
 	</ItemGroup>
 
 	<ItemGroup>
