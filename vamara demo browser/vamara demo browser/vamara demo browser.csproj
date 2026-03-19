@@ -71,6 +71,7 @@
 		<PackageReference Include="Vanara.Windows.Extensions" Version="5.0.1" />
 		<PackageReference Include="Vanara.Windows.Shell" Version="5.0.1" />
 		<PackageReference Include="Vanara.Windows.Shell.Common" Version="5.0.1" />
+		<PackageReference Include="Vortice.WinUI" Version="3.8.3" />
 	</ItemGroup>
 
 	<ItemGroup>

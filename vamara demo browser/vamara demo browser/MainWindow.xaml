@@ -20,9 +20,10 @@
                         IsBackEnabled="True"
                         IsSettingsVisible="True"
                         PaneDisplayMode="Left"
-                        PaneTitle="Vana"
+                        PaneTitle="Vana´ra"
                         SelectionChanged="NavigationView_SelectionChanged" 
-                        SelectionFollowsFocus="Disabled">
+                        SelectionFollowsFocus="Disabled"
+                        >
             <NavigationView.HeaderTemplate>
                 <DataTemplate>
                     <!--<TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
@@ -54,40 +55,36 @@
                         <!-- Normal Header -->
                         <Grid x:Name="HeaderContent">
                             <Image x:Name="BackgroundLayer" Source="/Assets/Public Domain/1920px-Rama_and_monkey_chiefs.jpg" Stretch="Fill" />
-                            <Image Grid.Column="1" 
-                                   HorizontalAlignment="Left" 
-                                   Source="/Assets/Vanara64x64.png" 
-                                   VerticalAlignment="Top"                                   
-                                   Width="96" />
+                            <Image Grid.Column="1" HorizontalAlignment="Left" Source="/Assets/Vanara64x64.png" VerticalAlignment="Top" Width="96" />
                             <!-- Parallax Layer: foreground -->
                             <StackPanel x:Name="ForegroundLayer" VerticalAlignment="Center" Padding="24">
                                 <TextBlock Style="{StaticResource TitleLargeTextBlockStyle}" Text="Settings" />
                             </StackPanel>
                             <!-- Easter Egg Game Layer -->
-                            <Canvas x:Name="GameLayer" Visibility="Collapsed" IsHitTestVisible="False" />
+                            <Canvas x:Name="HappyEasterGameLayer" Visibility="Collapsed" IsHitTestVisible="False" />
                         </Grid>
                     </Grid>
-                    <!--                             <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
--->
-                    <!--<Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
-                        <StackPanel>
-                            <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                            -->
-                    <!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
-                            <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
-                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>-->
-                    <!--
-                        </StackPanel>
-                    </Border>-->
+                    <!-- <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/> -->
+                    <!-- <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
+                             <StackPanel>
+                                <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                                <Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed" />
+                                <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
+                                <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/> 
+                            </StackPanel>
+                        </Border> -->
+                    
                     <!-- TABVIEW -->
-                    <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" Visibility="Collapsed">
-                        <TabViewItem Header="Overview"/>
-                        <TabViewItem Header="Packages"/>
-                        <TabViewItem Header="Interop"/>
-                        <TabViewItem Header="Shell"/>
-                        <TabViewItem Header="Windowing"/>
-                        <TabViewItem Header="Composition"/>
+                    <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" >
+                        <TabViewItem Header="Overview" IsEnabled="False" />
+                        <TabViewItem Header="Packages" IsEnabled="False" />
+                        <TabViewItem Header="Interop" IsEnabled="False" />
+                        <TabViewItem Header="Shell" IsEnabled="False" />
+                        <TabViewItem Header="Windowing" IsEnabled="False" />
+                        <TabViewItem Header="Composition" IsEnabled="False" />
+                        <TabViewItem Header="About" IsEnabled="False" />
                     </TabView>
+
                     <!-- RIBBON (optional) -->
                     <CommandBar x:Name="RibbonBar" Grid.Row="3" DefaultLabelPosition="Right">
                         <AppBarButton Icon="Refresh" Label="Reload"/>
@@ -95,22 +92,20 @@
                         <AppBarButton Icon="Help" Label="Docs"/>
                     </CommandBar>
 
-
-                    <Grid>
-                        <!-- CONTENT -->
+                    <!-- CONTENT: ContentFrame, RightSidebar -->
+                    <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="256" x:Name="SidebarColumn" />
                         </Grid.ColumnDefinitions>
 
-                        <!-- Hauptinhalt -->
                         <Frame Grid.Column="0" x:Name="ContentFrame" />
                         <!--<Image Source="Assets/octocat.png" Width="64" Height="64"/>
-                        <Image Source="ms-appx:///Assets/octocat.svg"/>-->
+                            <Image Source="ms-appx:///Assets/octocat.svg"/> -->
 
-                        <!-- East Sidebar -->
+                        <!-- Sidebar East -->
                         <Border x:Name="RightSidebar" Background="{ThemeResource LayerFillColorDefaultBrush}" Grid.Column="1">
-                            <!-- Sidebar Content -->
+                            <!-- Sidebar East Content -->
                         </Border>
                     </Grid>
                 </Grid>
