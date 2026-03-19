@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics;
 using vamara_demo_browser.Models;
 using vamara_demo_browser.Services;
-using static Vanara.PInvoke.Ole32.PROPERTYKEY.System;
 
 namespace vamara_demo_browser;
 
@@ -48,8 +47,8 @@ public partial class App : Application
         }
     }
 
-    /// <summary>Invoked when the application is launched.</summary>
-    /// <param name="args">Details about the launch request and process.</param>
+    /// <summary>Invoked when the application is launched.
+    /// <param name="args">Details about the launch request and process.</param></summary>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
         try
