@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace vamara_demo_browser.Models;
 
+public enum SidebarDockPosition { Right, Left, Floating }
+
+public sealed class SidebarState
+{
+    public bool IsOpen { get; set; }
+    public SidebarDockPosition Position { get; set; }
+    public double Width { get; set; } = 320;
+}
+
 internal class SidebarViewModel
 {
 }

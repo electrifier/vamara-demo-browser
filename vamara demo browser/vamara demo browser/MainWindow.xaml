@@ -36,7 +36,8 @@
                 <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
                 <NavigationViewItem Icon="Calendar" Content="History" Tag="History"  />
                 <NavigationViewItemSeparator />
-                <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" /><!-- https://github.com/dahall/Vanara -->
+                <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" />
+                <!-- https://github.com/dahall/Vanara -->
                 <NavigationViewItem Icon="Download" IsEnabled="False" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
                 <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="GitHub Client" Tag="Use GitHub client" />
                 <NavigationViewItemSeparator />
@@ -71,19 +72,21 @@
                     <!--<Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
                             <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                            --><!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
+                            -->
+                    <!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
                             <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
-                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>--><!--
+                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>-->
+                    <!--
                         </StackPanel>
                     </Border>-->
                     <!-- TABVIEW -->
                     <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" Visibility="Collapsed">
                         <TabViewItem Header="Overview"/>
-                            <TabViewItem Header="Packages"/>
-                            <TabViewItem Header="Interop"/>
-                            <TabViewItem Header="Shell"/>
-                            <TabViewItem Header="Windowing"/>
-                            <TabViewItem Header="Composition"/>
+                        <TabViewItem Header="Packages"/>
+                        <TabViewItem Header="Interop"/>
+                        <TabViewItem Header="Shell"/>
+                        <TabViewItem Header="Windowing"/>
+                        <TabViewItem Header="Composition"/>
                     </TabView>
                     <!-- RIBBON (optional) -->
                     <CommandBar x:Name="RibbonBar" Grid.Row="3" DefaultLabelPosition="Right">
@@ -93,11 +96,23 @@
                     </CommandBar>
 
 
-                    <!-- CONTENT -->
-                    <Frame x:Name="ContentFrame" Grid.Row="4" >
+                    <Grid>
+                        <!-- CONTENT -->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="256" x:Name="SidebarColumn" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Hauptinhalt -->
+                        <Frame Grid.Column="0" x:Name="ContentFrame" />
                         <!--<Image Source="Assets/octocat.png" Width="64" Height="64"/>
                         <Image Source="ms-appx:///Assets/octocat.svg"/>-->
-                    </Frame>
+
+                        <!-- East Sidebar -->
+                        <Border x:Name="RightSidebar" Background="{ThemeResource LayerFillColorDefaultBrush}" Grid.Column="1">
+                            <!-- Sidebar Content -->
+                        </Border>
+                    </Grid>
                 </Grid>
             </Frame>
         </NavigationView>
@@ -113,7 +128,7 @@
                                 </GeometryGroup>
                             </PathIcon.Data>
                         </PathIcon> -->
-                <!-- <Grid RowDefinitions="Auto,*">
+<!-- <Grid RowDefinitions="Auto,*">
                             <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" 
                             Height="80"
                             Padding="20"
@@ -130,7 +145,7 @@
                                 </StackPanel>
                             </Border>
                         </Grid> -->
-                <!-- <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
+<!-- <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
                      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
                                 Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                      </Border>
@@ -140,4 +155,4 @@
                                VerticalAlignment="Center" 
                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
                 </Border>-->
-                <!-- The contentFrame is well known as the Home screen -->
+<!-- The contentFrame is well known as the Home screen -->
