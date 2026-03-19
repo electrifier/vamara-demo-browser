@@ -1,4 +1,10 @@
-﻿using Microsoft.UI.Xaml;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.UI.Xaml;
+using System;
+using System.Diagnostics;
+using vamara_demo_browser.Models;
+using vamara_demo_browser.Services;
+using static Vanara.PInvoke.Ole32.PROPERTYKEY.System;
 
 namespace vamara_demo_browser;
 
@@ -10,6 +16,10 @@ namespace vamara_demo_browser;
 /// </summary>
 public partial class App : Application
 {
+    public static IServiceProvider Services { get; private set; }
+
+    public ServiceCollection ServiceCollection = new();
+
     private Window? _window;
     public static Window MainWindow => ((App)Current)._window!;
 
@@ -19,14 +29,31 @@ public partial class App : Application
     /// </summary>
     public App()
     {
+        Debug.WriteLine("App.ctor()");
         InitializeComponent();
+        ConfigureServices();
+
+        ServiceCollection.AddSingleton<ILocalizationService, LocalizationService>();
+        ServiceCollection.AddTransient<SettingsViewModel>();
+
     }
 
-    /// <summary>
-    /// Invoked when the application is launched.
-    /// </summary>
+    private void ConfigureServices()
+    {
+        //var services = new ServiceCollection();
+
+        // Services
+        ServiceCollection.AddSingleton<ILocalizationService, LocalizationService>();
+
+        // ViewModels
+        ServiceCollection.AddTransient<SettingsViewModel>();
+
+        Services = ServiceCollection.BuildServiceProvider();
+    }
+
+    /// <summary>Invoked when the application is launched.</summary>
     /// <param name="args">Details about the launch request and process.</param>
-    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+    protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
         _window = new MainWindow();
         _window.Activate();

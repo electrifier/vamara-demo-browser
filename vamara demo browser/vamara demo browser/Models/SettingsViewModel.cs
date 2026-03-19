@@ -9,7 +9,7 @@ using vamara_demo_browser.Services;
 
 namespace vamara_demo_browser.Models;
 
-public class SettingsViewModel : ObservableObject
+public sealed partial class SettingsViewModel : ObservableObject
 {
     private readonly IThemeService _themeService;
     private readonly ILocalizationService _localizationService;
@@ -42,12 +42,48 @@ public class SettingsViewModel : ObservableObject
         }
     }
 
-    public SettingsViewModel(IThemeService themeService)
+    public SettingsViewModel(IThemeService themeService, ILocalizationService localizationService)
     {
         _themeService = themeService;
         _selectedTheme = themeService.CurrentTheme;
-        _localizationService = _localizationService;
-        _selectedLanguage = _localizationService.CurrentLanguage;
+        _localizationService = localizationService;
+        //        _selectedLanguage = _localizationService.CurrentLanguage;
+        _selectedLanguage = "en-US"; // TODO: Get current language from localization service
     }
 
+    /*  public sealed partial class SettingsViewModel : ObservableObject
+        {
+            private readonly ILocalizationService _localization;
+
+            public SettingsViewModel(ILocalizationService localization)
+            {
+                _localization = localization;
+            }
+        } */
+
+
+    /*
+     public sealed partial class SettingsViewModel : ObservableObject
+    {
+        private readonly ILocalizationService _localization;
+
+        [ObservableProperty]
+        private string _selectedLanguage;
+
+        public IReadOnlyList<string> Languages => _localization.AvailableLanguages;
+
+        public SettingsViewModel(ILocalizationService localization)
+        {
+            _localization = localization;
+            SelectedLanguage = _localization.CurrentLanguage;
+        }
+
+        partial void OnSelectedLanguageChanged(string value)
+        {
+            _localization.SetLanguage(value);
+        }
+    }
+
+
+     */
 }
