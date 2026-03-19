@@ -41,9 +41,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="7.0.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.1" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3856.49" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+		<PackageReference Include="SunCalcNet" Version="1.2.3" />
 		<PackageReference Include="Vanara.Core" Version="5.0.1" />
 		<PackageReference Include="Vanara.PInvoke.ComCtl32" Version="5.0.1" />
 		<PackageReference Include="Vanara.PInvoke.CredUI" Version="5.0.1" />
