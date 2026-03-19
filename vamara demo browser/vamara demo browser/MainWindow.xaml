@@ -32,7 +32,7 @@
             </NavigationView.HeaderTemplate>
             <NavigationView.MenuItems>
                 <TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
-                <HyperlinkButton Content="Vanara on gitHub" NavigateUri="https://github.com/tajbender/WinClassicSamplesCS" />
+                <HyperlinkButton Content="Vanara on gitHub" NavigateUri="https://github.com/dahall/Vanara" />
                 <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
                 <NavigationViewItem Icon="Calendar" Content="History" Tag="History"  />
                 <NavigationViewItemSeparator />
@@ -45,41 +45,45 @@
             </NavigationView.MenuItems>
             <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
             <!-- <NavigationCacheMode="Enabled"/> -->
+            <!-- RootNavigationView -->
             <Frame x:Name="RootNavigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
                     <!-- HEADER -->
-
-                    <Grid x:Name="HeaderRoot" Height="200">
-
+                    <Grid x:Name="HeaderRoot" Height="255">
                         <!-- Normal Header -->
                         <Grid x:Name="HeaderContent">
-                            <Image x:Name="BackgroundLayer" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191513.png" Stretch="UniformToFill" />
+                            <Image x:Name="BackgroundLayer" Source="/Assets/Public Domain/1920px-Rama_and_monkey_chiefs.jpg" Stretch="Fill" />
+                            <Image Grid.Column="1" 
+                                   HorizontalAlignment="Left" 
+                                   Source="/Assets/Vanara64x64.png" 
+                                   VerticalAlignment="Top"                                   
+                                   Width="96" />
                             <!-- Parallax Layer: foreground -->
                             <StackPanel x:Name="ForegroundLayer" VerticalAlignment="Center" Padding="24">
-                                <TextBlock Text="Settings" Style="{StaticResource TitleLargeTextBlockStyle}"/>
+                                <TextBlock Style="{StaticResource TitleLargeTextBlockStyle}" Text="Settings" />
                             </StackPanel>
                             <!-- Easter Egg Game Layer -->
                             <Canvas x:Name="GameLayer" Visibility="Collapsed" IsHitTestVisible="False" />
                         </Grid>
                     </Grid>
-
-
-                    <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
+                    <!--                             <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+-->
+                    <!--<Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                         <StackPanel>
                             <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-                            <!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
+                            --><!--<Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed"/>
                             <TextBlock Text="Vanara – The Friendly Interop Beast" FontSize="28" FontWeight="Bold"/>
-                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>-->
+                            <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/>--><!--
                         </StackPanel>
-                    </Border>
+                    </Border>-->
                     <!-- TABVIEW -->
                     <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" Visibility="Collapsed">
-                        <!--<TabViewItem Header="Overview"/>
+                        <TabViewItem Header="Overview"/>
                             <TabViewItem Header="Packages"/>
                             <TabViewItem Header="Interop"/>
                             <TabViewItem Header="Shell"/>
                             <TabViewItem Header="Windowing"/>
-                            <TabViewItem Header="Composition"/>-->
+                            <TabViewItem Header="Composition"/>
                     </TabView>
                     <!-- RIBBON (optional) -->
                     <CommandBar x:Name="RibbonBar" Grid.Row="3" DefaultLabelPosition="Right">

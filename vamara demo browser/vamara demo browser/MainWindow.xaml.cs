@@ -90,12 +90,12 @@ public sealed partial class MainWindow : Window
     //    Debug.WriteLine("InitializeComponent called");
     //}
 
-    private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+    private void RootNavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
     {
-        StringBuilder strBuf = new();
-
         try
         {
+            StringBuilder strBuf = new();
+
             if (args.IsSettingsSelected)
             {
                 // Handle settings selection
@@ -110,7 +110,7 @@ public sealed partial class MainWindow : Window
 
     private string GetDebuggerDisplay()
     {
-        return ToString();
+        return new StringBuilder().AppendLine("{this}").Append(GetDebuggerDisplay()).ToString();
     }
 
     // StringBuilder sb = new();
