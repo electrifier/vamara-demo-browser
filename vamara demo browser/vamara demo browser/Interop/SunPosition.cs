@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vamara_demo_browser.Models;
+namespace vamara_demo_browser.Interop;
 
 public sealed class SunPosition
 {

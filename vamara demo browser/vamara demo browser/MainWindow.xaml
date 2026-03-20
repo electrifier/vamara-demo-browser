@@ -8,22 +8,46 @@
         mc:Ignorable="d"
         Title="vamara. interop with pleasure. demo browser beta build">
     <!-- ExtendsContentIntoTitleBar="True" -->
+    <!-- MinHeight="800" MinWidth="600" -->
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
-    <Grid>
-        <NavigationView x:Name="RootNavigationView" 
-                        AlwaysShowHeader="False"
+
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            --><!-- Tree --><!--
+            <ColumnDefinition Width="*"/>
+            --><!-- Explorer --><!--
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            --><!-- AppBar --><!--
+            <RowDefinition Height="*"/>
+            --><!-- Content --><!--
+        </Grid.RowDefinitions>
+
+        --><!-- AppBar --><!--
+        <local:ExplorerAppBar x:Name="AppBar" Grid.Row="0" Grid.ColumnSpan="2" Height="48" />
+
+        --><!-- TreeView --><!--
+        <local:ShellNamespaceTreeView x:Name="Tree" Grid.Row="1" Grid.Column="0" Margin="0,4,8,0"/>
+
+        --><!-- Explorer Content --><!--
+        <Frame Grid.Row="1" Grid.Column="1" x:Name="ContentFrame"/>
+    </Grid>-->
+
+    <NavigationView x:Name="RootNavigationView" 
+                        AlwaysShowHeader="True"
                         ExpandedModeThresholdWidth="256"
-                        Header="Vanara Header"
+                        Header="Vanara vana"
                         IsBackButtonVisible="Auto"
                         IsBackEnabled="True"
                         IsSettingsVisible="True"
                         PaneDisplayMode="Left"
                         PaneTitle="Vana´ra"
                         SelectionChanged="NavigationView_SelectionChanged" 
-                        SelectionFollowsFocus="Disabled"
-                        >
+                        SelectionFollowsFocus="Disabled">
             <NavigationView.HeaderTemplate>
                 <DataTemplate>
                     <!--<TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
@@ -32,10 +56,12 @@
                 </DataTemplate>
             </NavigationView.HeaderTemplate>
             <NavigationView.MenuItems>
+                <!-- https://github.com/dahall/Vanara/releases -->
                 <TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
-                <HyperlinkButton Content="Vanara on gitHub" NavigateUri="https://github.com/dahall/Vanara" />
+                <HyperlinkButton Content="Vanara on GitHub" NavigateUri="https://github.com/dahall/Vanara" />
                 <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
-                <NavigationViewItem Icon="Calendar" Content="History" Tag="History"  />
+                <!--<NavigationViewItem Icon="Calendar" Content="History" NavigateUri="https://github.com/dahall/Vanara/releases" Tag="History" />-->
+                <NavigationViewItem Icon="Calendar" Content="Releases" Tag="History" />
                 <NavigationViewItemSeparator />
                 <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" />
                 <!-- https://github.com/dahall/Vanara -->
@@ -73,7 +99,7 @@
                                 <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/> 
                             </StackPanel>
                         </Border> -->
-                    
+
                     <!-- TABVIEW -->
                     <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" >
                         <TabViewItem Header="Overview" IsEnabled="False" />
@@ -111,7 +137,6 @@
                 </Grid>
             </Frame>
         </NavigationView>
-    </Grid>
 </Window>
 
 <!-- <PathIcon Width="28" Height="28">

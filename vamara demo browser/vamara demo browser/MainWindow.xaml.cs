@@ -1,19 +1,19 @@
 using Microsoft.UI.Composition;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Hosting;
 using Microsoft.UI.Xaml;
 using System.Diagnostics;
 using System.Numerics;
 using System.Text;
 using System;
 using vamara_demo_browser.Pages;
+using Microsoft.UI.Xaml.Hosting;
 
 namespace vamara_demo_browser;
 
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(), nq}}")]
 public sealed partial class MainWindow : Window
 {
-    private Compositor _compositor;
+    //private Compositor _compositor;
     private SpriteVisual _bgVisual;
     private SpriteVisual _fgVisual;
 
@@ -23,40 +23,40 @@ public sealed partial class MainWindow : Window
         Debug.IndentLevel += 2;
         InitializeComponent();
 
+        // Window.Current.SetTitleBar(AppTitleBar);   // TODO: 19/03/26 - Custom TitleBar implementieren
+        Window.Current.SizeChanged += OnWindowSizeChanged;
 
-        //var sun = _sunService.GetSunPosition(DateTimeOffset.Now, lat, lon);
+        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
+        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
 
-
-        // Loaded += OnLoaded;
-        // Window.Current.SizeChanged += OnWindowSizeChanged;
+        //OnLoaded += OnLoaded;
 
         //RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
-
-
         // TODO: Add event handlers for navigation view selection changes and settings selection
-        //        // NavigationView initialisiert → jetzt direkt zur AboutPage navigieren
-        //        RootNavigationView.Loaded += (_, __) =>
-        //        {
-        ////            RootNavigationView.SelectedItem = RootNavigationView.MenuItems
-        ////                .OfType<NavigationViewItem>()
-        ////                .FirstOrDefault(i => (string)i.Tag == "AboutPage");
-        ////
-        ////            ContentFrame.Navigate(typeof(Pages.AboutPage));
-        //        };
+        //       // NavigationView initialisiert → jetzt direkt zur AboutPage navigieren
+        //       RootNavigationView.Loaded += (_, __) =>
+        //       {
+        //           RootNavigationView.SelectedItem = RootNavigationView.MenuItems
+        //               .OfType<NavigationViewItem>()
+        //               .FirstOrDefault(i => (string)i.Tag == "AboutPage");
+        //
+        //           ContentFrame.Navigate(typeof(Pages.AboutPage));
+        //       };
 
+        //var sun = _sunService.GetSunPosition(DateTimeOffset.Now, lat, lon);
     }
 
 
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-//        // TODO: 19/03/26 - Parallax-Effekt implementieren
-//        //        _compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
-//        //
-//        //        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
-//        //        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
-//        //
-//        //        UpdateParallax(Window.Current.Bounds.Width);
+        // TODO: 19/03/26 - Parallax-Effekt implementieren
+        //        _compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
+        //
+        //        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
+        //        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
+        //
+        //        UpdateParallax(Window.Current.Bounds.Width);
     }
 
     private void OnWindowSizeChanged(object sender, WindowSizeChangedEventArgs e)
@@ -100,31 +100,36 @@ public sealed partial class MainWindow : Window
 
     private void RootNavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
     {
-//        try
-//        {
-//            if (args.IsSettingsSelected)
-//            {
-//                ContentFrame.Navigate(typeof(SettingsPage));
-//                return;
-//            }
-//
-//            if (args.SelectedItem is NavigationViewItem item)
-//            {
-//                switch (item.Tag)
-//                {
-//                    case "AboutPage":
-//                        ContentFrame.Navigate(typeof(AboutPage));
-//                        break;
-//
-//                    default:
-//                        break;
-//                }
-//            }
-//        }
-//        catch (Exception)
-//        {
-//            throw;
-//        }
+        try
+        {
+            if (args.IsSettingsSelected)
+            {
+                ContentFrame.Navigate(typeof(SettingsPage));
+                return;
+            }
+
+            if (args.SelectedItem is NavigationViewItem item)
+            {
+                switch (item.Tag)
+                {
+                    case "AboutPage":
+                        ContentFrame.Navigate(typeof(AboutPage));
+                        break;
+                    case "FileExplorerPage":
+                        ContentFrame.Navigate(typeof(FileExplorerPage));
+                        break;
+                    default:
+                        Debug.Fail("RootNavigationView_SelectionChanged: Unknown Tag to navigate to");
+                        break;
+                }
+            }
+
+            Debug.Print("RootNavigationView_SelectionChanged: Navigated to {0}", args.SelectedItem);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
 
     private void NavigationView_SelectionChanged(object sender, NavigationViewSelectionChangedEventArgs args)

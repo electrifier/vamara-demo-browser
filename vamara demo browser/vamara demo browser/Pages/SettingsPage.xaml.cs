@@ -1,6 +1,5 @@
-﻿using Microsoft.UI.Xaml.Controls;
-using System;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.UI.Xaml.Controls;
 using vamara_demo_browser.Models;
 
 namespace vamara_demo_browser.Pages;

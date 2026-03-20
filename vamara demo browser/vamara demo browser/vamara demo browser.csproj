@@ -17,16 +17,16 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Content Remove="Assets\Public Domain\License.md" />
-		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
+		<Content Remove="Assets\Supporters\RibbonWinForms.cs" />
 		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Pages\BlankPage1.xaml" />
 	  <None Remove="Pages\BlankWindow1.xaml" />
 	  <None Remove="Strings\Localizatoin i18n Dictionary.xaml" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Page Remove="Pages\SettingsPage.xaml" />
+	  <Page Remove="Pages\ShellControlGallery.xaml" />
 	  <Page Remove="Themes\Longhorn.xaml" />
 	  <Page Remove="Themes\Template.xaml" />
 	</ItemGroup>
@@ -56,6 +56,8 @@
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
+		<Folder Include="Interop\Shell32\" />
+		<Folder Include="WinUI.extensions\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -63,6 +65,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
 	  <None Update="Pages\SettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	  <None Update="Pages\ShellControlGallery.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
 	  <None Update="Themes\Template.xaml">
@@ -80,7 +85,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Page Update="Pages\BlankPage1.xaml">
+	  <Page Update="Pages\FileExplorerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
 	  <Page Update="Themes\Dark.xaml">
@@ -107,5 +112,13 @@
 		<Title>Vanra demo browser</Title>
 		<Version>5.26.313</Version>
 		<ApplicationIcon>Assets\MainWindowIcon.ico</ApplicationIcon>
+		<Description>5.26.313</Description>
+		<Copyright>(c) @dahall</Copyright>
+		<PackageProjectUrl>https://github.com/dahall/Vanara</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/dahall/Vanara</RepositoryUrl>
+		<PackageTags>Vanara; Pinvoke; P-Invoke; WinForms; Win32; Shell32; Windows; Demo; Interop</PackageTags>
+		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
+		<IncludeSymbols>True</IncludeSymbols>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 </Project>
