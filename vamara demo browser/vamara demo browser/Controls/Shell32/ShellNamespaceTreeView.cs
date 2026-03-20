@@ -8,4 +8,7 @@ namespace vamara_demo_browser.Controls.Shell32;
 
 internal class ShellNamespaceTreeView
 {
+    public ShellNamespaceTreeView()
+    {
+    }
 }
