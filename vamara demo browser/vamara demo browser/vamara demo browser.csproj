@@ -26,7 +26,6 @@
 		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Pages\BlankPage1.xaml" />
 	  <None Remove="Pages\BlankWindow1.xaml" />
 	  <None Remove="Strings\Localizatoin i18n Dictionary.xaml" />
 	</ItemGroup>
@@ -82,7 +81,6 @@
 	<ItemGroup>
 		<Folder Include="Assets\Icons\" />
 		<Folder Include="Assets\Themes\Lorraine\" />
-		<Folder Include="Controls\UserInterface\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
 		<Folder Include="Interop\Shell32\" />
@@ -126,7 +124,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Page Update="Pages\BlankPage1.xaml">
+	  <Page Update="Pages\FileExplorerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
 	  <Page Update="Themes\Dark.xaml">
