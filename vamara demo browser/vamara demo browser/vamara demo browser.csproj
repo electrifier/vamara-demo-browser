@@ -16,11 +16,6 @@
 	  <Compile Remove="Controls\TabbedCommandBarExperiment.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
-		<Content Remove="Assets\.a.i. generated\Copilot\Copilot_20260315_191513.png" />
-		<Content Remove="Assets\.a.i. generated\Copilot\Copilot_20260315_191519.png" />
-		<Content Remove="Assets\.a.i. generated\Copilot\Sheep with coffee pot.png" />
-		<Content Remove="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
 		<Content Remove="Assets\Public Domain\License.md" />
 		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
 		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
@@ -46,31 +41,14 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.5" />
 		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3856.49" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250602001" />
 		<PackageReference Include="SunCalcNet" Version="1.2.3" />
-		<PackageReference Include="Vanara.Core" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.ComCtl32" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.CredUI" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Cryptography" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.DwmApi" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.IpHlpApi" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Kernel32" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.NetApi32" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.NTDSApi" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Ole" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Rpc" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.SearchApi" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Security" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Shell32" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.ShlwApi" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.User32" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.WinTrust" Version="5.0.1" />
-		<PackageReference Include="Vanara.PInvoke.Ws2_32" Version="5.0.1" />
-		<PackageReference Include="Vanara.Security" Version="5.0.1" />
-		<PackageReference Include="Vanara.Windows.Extensions" Version="5.0.1" />
-		<PackageReference Include="Vanara.Windows.Shell" Version="5.0.1" />
-		<PackageReference Include="Vanara.Windows.Shell.Common" Version="5.0.1" />
+		<PackageReference Include="Vanara.Core" Version="4.2.1" />
+		<PackageReference Include="Vanara.PInvoke.NtDll" Version="4.2.1" />
+		<PackageReference Include="Vanara.PInvoke.SearchApi" Version="4.2.1" />
+		<PackageReference Include="Vanara.Windows.Shell" Version="4.2.1" />
+		<PackageReference Include="Vanara.Windows.Shell.Common" Version="4.2.1" />
+		<PackageReference Include="Vanara.WinUI.Extensions" Version="4.2.1" />
 		<PackageReference Include="Vortice.WinUI" Version="3.8.3" />
 	</ItemGroup>
 
@@ -82,13 +60,6 @@
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="Assets\.a.i. generated\Copilot\Copilot_20260315_191513.png" />
-	  <None Include="Assets\.a.i. generated\Copilot\Copilot_20260315_191519.png" />
-	  <None Include="Assets\.a.i. generated\Copilot\Sheep with coffee pot.png" />
-	  <None Include="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -126,18 +97,19 @@
 
 	<!-- Publish Properties -->
 	<PropertyGroup>
-		<PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
+		<Copyright>(c) @dahall</Copyright>
+		<Description>5.26.313</Description>
+		<IncludeSymbols>True</IncludeSymbols>
+		<PackageProjectUrl>https://github.com/dahall/Vanara</PackageProjectUrl>
+		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
+		<PackageTags>Vanara; Pinvoke; P-Invoke; WinForms; Win32; Shell32; Windows; Demo; Interop</PackageTags>
 		<PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
-		<PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
+		<PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
 		<PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
+		<PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
+		<RepositoryUrl>https://github.com/dahall/Vanara</RepositoryUrl>
 		<Title>Vanra demo browser</Title>
 		<Version>5.26.313</Version>
-		<Description>5.26.313</Description>
-		<Copyright>(c) @dahall</Copyright>
-		<PackageProjectUrl>https://github.com/dahall/Vanara</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/dahall/Vanara</RepositoryUrl>
-		<PackageTags>Vanara; Pinvoke; P-Invoke; WinForms; Win32; Shell32; Windows; Demo; Interop</PackageTags>
-		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
-		<IncludeSymbols>True</IncludeSymbols>
+		<ApplicationIcon>Assets\MainWindowIcon.ico</ApplicationIcon>
 	</PropertyGroup>
 </Project>
