@@ -13,17 +13,16 @@
     </Window.SystemBackdrop>
     <Grid>
         <NavigationView x:Name="RootNavigationView" 
-                        AlwaysShowHeader="False"
+                        AlwaysShowHeader="True"
                         ExpandedModeThresholdWidth="256"
-                        Header="Vanara Header"
+                        Header="Vanara vana"
                         IsBackButtonVisible="Auto"
                         IsBackEnabled="True"
                         IsSettingsVisible="True"
                         PaneDisplayMode="Left"
                         PaneTitle="Vana´ra"
                         SelectionChanged="NavigationView_SelectionChanged" 
-                        SelectionFollowsFocus="Disabled"
-                        >
+                        SelectionFollowsFocus="Disabled">
             <NavigationView.HeaderTemplate>
                 <DataTemplate>
                     <!--<TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
@@ -32,10 +31,12 @@
                 </DataTemplate>
             </NavigationView.HeaderTemplate>
             <NavigationView.MenuItems>
+                <!-- https://github.com/dahall/Vanara/releases -->
                 <TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
-                <HyperlinkButton Content="Vanara on gitHub" NavigateUri="https://github.com/dahall/Vanara" />
+                <HyperlinkButton Content="Vanara on GitHub" NavigateUri="https://github.com/dahall/Vanara" />
                 <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
-                <NavigationViewItem Icon="Calendar" Content="History" Tag="History"  />
+                <!--<NavigationViewItem Icon="Calendar" Content="History" NavigateUri="https://github.com/dahall/Vanara/releases" Tag="History" />-->
+                <NavigationViewItem Icon="Calendar" Content="Releases" Tag="History" />
                 <NavigationViewItemSeparator />
                 <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" />
                 <!-- https://github.com/dahall/Vanara -->
@@ -73,7 +74,7 @@
                                 <TextBlock Text="Bringing WinUI 3 and Win32 together since forever." Opacity="0.7"/> 
                             </StackPanel>
                         </Border> -->
-                    
+
                     <!-- TABVIEW -->
                     <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" >
                         <TabViewItem Header="Overview" IsEnabled="False" />
