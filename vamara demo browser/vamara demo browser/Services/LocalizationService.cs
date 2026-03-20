@@ -17,12 +17,20 @@ public class LocalizationService : ILocalizationService
     private readonly IReadOnlyList<string> _languages =
         new[] { "en-US", "de-DE" };
 
+    public event EventHandler LanguageChanged;
+
     public IReadOnlyList<string> AvailableLanguages => _languages;
 
     public string CurrentLanguage =>
         ApplicationLanguages.PrimaryLanguageOverride
         ?? ApplicationLanguages.Languages.FirstOrDefault()
         ?? "en-US";
+
+    public LocalizationService()
+    {
+        //        CurrentLanguage = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride
+        //                          ?? Windows.Globalization.ApplicationLanguages.Languages.First();
+    }
 
     public void SetLanguage(string languageTag)
     {
@@ -31,11 +39,30 @@ public class LocalizationService : ILocalizationService
 
         ApplicationLanguages.PrimaryLanguageOverride = languageTag;
 
-        // UI neu laden
+        // Reload UI
         if (App.MainWindow.Content is FrameworkElement root)
         {
             var newRoot = new AboutPage();
             App.MainWindow.Content = newRoot;
         }
     }
+
+    /*  public void SetLanguage(string languageCode) {
+        if (languageCode == CurrentLanguage)
+            return;
+        if (!_languages.Contains(languageTag))
+            return;
+
+        Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = languageCode;
+        CurrentLanguage = languageCode;
+
+            // UI neu laden
+        if (App.MainWindow.Content is FrameworkElement root)
+        {
+            var newRoot = new AboutPage();
+            App.MainWindow.Content = newRoot;
+        }
+
+        LanguageChanged?.Invoke(this, EventArgs.Empty);
+        } */
 }

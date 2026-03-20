@@ -17,17 +17,21 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Content Remove="Assets\.a.i. generated\Copilot\.editorconfig" />
+		<Content Remove="Assets\.a.i. generated\Copilot\Copilot_20260315_191513.png" />
+		<Content Remove="Assets\.a.i. generated\Copilot\Copilot_20260315_191519.png" />
+		<Content Remove="Assets\.a.i. generated\Copilot\Sheep with coffee pot.png" />
 		<Content Remove="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
-		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
+		<Content Remove="Assets\Public Domain\License.md" />
+		<Content Remove="Assets\Supporters\RibbonWinForms.cs" />
 		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="Pages\BlankPage1.xaml" />
 	  <None Remove="Pages\BlankWindow1.xaml" />
 	  <None Remove="Strings\Localizatoin i18n Dictionary.xaml" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Page Remove="Pages\SettingsPage.xaml" />
+	  <Page Remove="Pages\ShellControlGallery.xaml" />
 	  <Page Remove="Themes\Longhorn.xaml" />
 	  <Page Remove="Themes\Template.xaml" />
 	</ItemGroup>
@@ -37,9 +41,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="7.0.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.5" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3856.49" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+		<PackageReference Include="SunCalcNet" Version="1.2.3" />
 		<PackageReference Include="Vanara.Core" Version="5.0.1" />
 		<PackageReference Include="Vanara.PInvoke.ComCtl32" Version="5.0.1" />
 		<PackageReference Include="Vanara.PInvoke.CredUI" Version="5.0.1" />
@@ -70,13 +78,24 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Assets\Icons\" />
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
+		<Folder Include="Interop\Shell32\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Copilot_20260315_191513.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Copilot_20260315_191519.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Sheep with coffee pot.png" />
+	  <None Include="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="Assets\Icons\Monkey Business 1024px 32bit.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -84,6 +103,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
 	  <None Update="Pages\SettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	  <None Update="Pages\ShellControlGallery.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
 	  <None Update="Themes\Template.xaml">
@@ -101,7 +123,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Page Update="Pages\BlankPage1.xaml">
+	  <Page Update="Pages\FileExplorerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
 	  <Page Update="Themes\Dark.xaml">
@@ -127,5 +149,6 @@
 		<PackageTags>Vanara; Pinvoke; P-Invoke; WinForms; Win32; Shell32; Windows; Demo; Interop</PackageTags>
 		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
 		<IncludeSymbols>True</IncludeSymbols>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 </Project>

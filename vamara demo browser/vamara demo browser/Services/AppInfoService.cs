@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
 namespace vamara_demo_browser.Services;
 
@@ -28,9 +30,20 @@ public partial class AppInfoService
             .Where(a => a.Name.StartsWith("Vanara"));
     }
 
+    internal string? GetAppVersion()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal string? GetBuildInfo()
+    {
+        return new StringBuilder().AppendLine("{this}").Append("TODO: Build Info").ToString();
+    }
+
+
     private string GetDebuggerDisplay()
     {
-        return ToString();
+        return new StringBuilder().AppendLine("{this}").Append(GetDebuggerDisplay()).ToString();
     }
 }
 

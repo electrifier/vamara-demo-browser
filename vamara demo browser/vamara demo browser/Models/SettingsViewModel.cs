@@ -1,26 +1,22 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Xaml;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using vamara_demo_browser.Services;
 
 namespace vamara_demo_browser.Models;
 
-public class SettingsViewModel : ObservableObject
+public sealed partial class SettingsViewModel : ObservableObject
 {
-    private readonly IThemeService _themeService;
+    private readonly IReadOnlyList<string> languages = ["en-US", "de-DE"];      // TODO: Get languages from localization service
     private readonly ILocalizationService _localizationService;
-
-    public IReadOnlyList<string> Languages { get; } =
-        new[] { "en-US", "de-DE" };
-    
-    public IReadOnlyList<ElementTheme> Themes { get; } =
-        new[] { ElementTheme.Default, ElementTheme.Light, ElementTheme.Dark };
-
     private string _selectedLanguage;
+    private readonly IThemeService _themeService;
+
+//    private readonly IReadOnlyList<Windows.UI.Xaml.ElementTheme> themes = [ElementTheme.Default, ElementTheme.Light, ElementTheme.Dark];
+
+    public IReadOnlyList<ElementTheme> Themes { get; } =
+        [ElementTheme.Default, ElementTheme.Light, ElementTheme.Dark];
+
     public string SelectedLanguage
     {
         get => _selectedLanguage;
@@ -42,12 +38,18 @@ public class SettingsViewModel : ObservableObject
         }
     }
 
-    public SettingsViewModel(IThemeService themeService)
+    public SettingsViewModel(IThemeService themeService, ILocalizationService localizationService)
     {
         _themeService = themeService;
         _selectedTheme = themeService.CurrentTheme;
-        _localizationService = _localizationService;
-        _selectedLanguage = _localizationService.CurrentLanguage;
+        _localizationService = localizationService;
+        // _selectedLanguage = _localizationService.CurrentLanguage;
+        _selectedLanguage = "en-US";    // TODO: Get current language from localization service
     }
 
+    public IReadOnlyList<string> GetLanguages()
+    {
+        // TODO: Get languages from localization service
+        return languages;
+    }
 }
