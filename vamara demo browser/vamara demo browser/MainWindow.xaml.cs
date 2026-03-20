@@ -6,6 +6,7 @@ using System.Numerics;
 using System.Text;
 using System;
 using vamara_demo_browser.Pages;
+using Microsoft.UI.Xaml.Hosting;
 
 namespace vamara_demo_browser;
 
@@ -23,9 +24,12 @@ public sealed partial class MainWindow : Window
         InitializeComponent();
 
         // Window.Current.SetTitleBar(AppTitleBar);   // TODO: 19/03/26 - Custom TitleBar implementieren
-        // Window.Current.SizeChanged += OnWindowSizeChanged;
+        Window.Current.SizeChanged += OnWindowSizeChanged;
 
-        // Loaded += OnLoaded;
+        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
+        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
+
+        //OnLoaded += OnLoaded;
 
         //RootNavigationView.SelectionChanged += NavigationView_SelectionChanged;
         // TODO: Add event handlers for navigation view selection changes and settings selection
