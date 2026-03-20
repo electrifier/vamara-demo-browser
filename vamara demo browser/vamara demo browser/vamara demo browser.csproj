@@ -53,10 +53,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="Assets\.a.i. generated\Copilot\.editorconfig" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
