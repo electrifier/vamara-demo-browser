@@ -9,6 +9,6 @@
     mc:Ignorable="d">
 
     <Grid>
-
+        <!-- <NavigationViewItem Content="Explorer" Icon="Folder" Tag="FileExplorerPage" /> -->
     </Grid>
 </Page>
