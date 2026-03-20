@@ -50,13 +50,13 @@ public sealed partial class MainWindow : Window
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-        //        // TODO: 19/03/26 - Parallax-Effekt implementieren
-        //        //        _compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
-        //        //
-        //        //        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
-        //        //        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
-        //        //
-        //        //        UpdateParallax(Window.Current.Bounds.Width);
+        // TODO: 19/03/26 - Parallax-Effekt implementieren
+        //        _compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
+        //
+        //        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
+        //        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
+        //
+        //        UpdateParallax(Window.Current.Bounds.Width);
     }
 
     private void OnWindowSizeChanged(object sender, WindowSizeChangedEventArgs e)
