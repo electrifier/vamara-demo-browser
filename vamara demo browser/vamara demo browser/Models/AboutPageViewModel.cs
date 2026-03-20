@@ -5,7 +5,7 @@ using vamara_demo_browser.Services;
 
 namespace vamara_demo_browser.Models;
 
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(), nq}}")]
 
 public class AboutPageViewModel
 {

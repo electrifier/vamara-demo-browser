@@ -15,7 +15,7 @@ namespace vamara_demo_browser.Services;
 /// - Version Info, `AssemblyInformationalVersion`
 /// - GIT Info incl. Commit Hash, Branch, etc.
 /// </summary>
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(), nq}}")]
 public partial class AppInfoService
 {
     public AppInfoService()

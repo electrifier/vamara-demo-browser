@@ -9,7 +9,7 @@ using vamara_demo_browser.Pages;
 
 namespace vamara_demo_browser;
 
-[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(), nq}}")]
 public sealed partial class MainWindow : Window
 {
     //private Compositor _compositor;
@@ -109,9 +109,6 @@ public sealed partial class MainWindow : Window
                 switch (item.Tag)
                 {
                     case "AboutPage":
-                        ContentFrame.Navigate(typeof(AboutPage));
-                        break;
-                    case "Documents":
                         ContentFrame.Navigate(typeof(AboutPage));
                         break;
                     case "FileExplorerPage":
