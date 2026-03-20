@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.UI.Xaml;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,10 @@ public sealed class SidebarState
     public bool IsOpen { get; set; }
     public SidebarDockPosition Position { get; set; }
     public double Width { get; set; } = 320;
+    public Visibility Visibility = Visibility.Visible;
 }
 
 internal class SidebarViewModel
 {
+
 }

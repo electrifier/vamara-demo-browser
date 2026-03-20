@@ -82,6 +82,7 @@
 	<ItemGroup>
 		<Folder Include="Assets\Icons\" />
 		<Folder Include="Assets\Themes\Lorraine\" />
+		<Folder Include="Controls\UserInterface\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
 		<Folder Include="Interop\Shell32\" />

@@ -7,14 +7,15 @@ namespace vamara_demo_browser.Models;
 
 public sealed partial class SettingsViewModel : ObservableObject
 {
+    private readonly IReadOnlyList<string> languages = ["en-US", "de-DE"];      // TODO: Get languages from localization service
     private readonly ILocalizationService _localizationService;
     private string _selectedLanguage;
     private readonly IThemeService _themeService;
-    private readonly IReadOnlyList<string> languages = new[] { "en-US", "de-DE" };
 
+//    private readonly IReadOnlyList<Windows.UI.Xaml.ElementTheme> themes = [ElementTheme.Default, ElementTheme.Light, ElementTheme.Dark];
 
     public IReadOnlyList<ElementTheme> Themes { get; } =
-        new[] { ElementTheme.Default, ElementTheme.Light, ElementTheme.Dark };
+        [ElementTheme.Default, ElementTheme.Light, ElementTheme.Dark];
 
     public string SelectedLanguage
     {
