@@ -9,7 +9,7 @@ using vamara_demo_browser.Models;
 
 namespace vamara_demo_browser.Pages;
 
-public sealed partial class ShellControlGallery : Page
+public partial class ShellControlGallery : Page
 {
 //    public SettingsViewModel ViewModel { get; }
 }
