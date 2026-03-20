@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace vamara_demo_browser.Controls;
 
-internal class GitHubClient
+public class GitHubClient
 {
+    public GitHubClient()
+    {
+    }
 }
