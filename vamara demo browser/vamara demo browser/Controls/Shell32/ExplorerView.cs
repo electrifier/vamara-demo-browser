@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace vamara_demo_browser.Controls.Shell32;
 
-internal class ExplorerView
+public class ExplorerView
 {
+    public ExplorerView()
+    {
+    }
 }
