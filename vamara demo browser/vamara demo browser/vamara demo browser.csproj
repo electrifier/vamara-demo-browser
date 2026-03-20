@@ -22,7 +22,7 @@
 		<Content Remove="Assets\.a.i. generated\Copilot\Sheep with coffee pot.png" />
 		<Content Remove="Assets\.a.i. generated\Copilot\Vanara Icons.png" />
 		<Content Remove="Assets\Public Domain\License.md" />
-		<Content Remove="Assets\supporters\RibbonWinForms.cs" />
+		<Content Remove="Assets\Supporters\RibbonWinForms.cs" />
 		<Content Remove="Assets\Themes\Windows-7\Cursor.cur" />
 	</ItemGroup>
 	<ItemGroup>
@@ -79,6 +79,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Assets\Icons\" />
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
