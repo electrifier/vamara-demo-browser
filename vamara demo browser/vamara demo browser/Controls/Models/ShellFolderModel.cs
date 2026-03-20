@@ -10,15 +10,13 @@ internal class ShellFolderModel
 {
     string _name;
     string _description;
-    StorageItemTypes _type;
     // Bitmap _icon;
     object _attributes;
 
-    internal ShellFolderModel(string name, string description, StorageItemTypes type, object attributes)
+    internal ShellFolderModel(string name, string description, object attributes)
     {
         _name = name;
         _description = description;
-        _type = type;
         _attributes = attributes;
     }
 }
