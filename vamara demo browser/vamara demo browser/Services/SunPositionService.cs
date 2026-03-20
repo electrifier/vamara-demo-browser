@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System;
-using vamara_demo_browser.Models;
+using vamara_demo_browser.Interop;
 
 namespace vamara_demo_browser.Services;
 
