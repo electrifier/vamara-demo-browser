@@ -1,26 +1,21 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Xaml;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using vamara_demo_browser.Services;
 
 namespace vamara_demo_browser.Models;
 
 public sealed partial class SettingsViewModel : ObservableObject
 {
-    private readonly IThemeService _themeService;
     private readonly ILocalizationService _localizationService;
+    private string _selectedLanguage;
+    private readonly IThemeService _themeService;
+    private readonly IReadOnlyList<string> languages = new[] { "en-US", "de-DE" };
 
-    public IReadOnlyList<string> Languages { get; } =
-        new[] { "en-US", "de-DE" };
-    
+
     public IReadOnlyList<ElementTheme> Themes { get; } =
         new[] { ElementTheme.Default, ElementTheme.Light, ElementTheme.Dark };
 
-    private string _selectedLanguage;
     public string SelectedLanguage
     {
         get => _selectedLanguage;
@@ -47,43 +42,13 @@ public sealed partial class SettingsViewModel : ObservableObject
         _themeService = themeService;
         _selectedTheme = themeService.CurrentTheme;
         _localizationService = localizationService;
-        //        _selectedLanguage = _localizationService.CurrentLanguage;
-        _selectedLanguage = "en-US"; // TODO: Get current language from localization service
+        // _selectedLanguage = _localizationService.CurrentLanguage;
+        _selectedLanguage = "en-US";    // TODO: Get current language from localization service
     }
 
-    /*  public sealed partial class SettingsViewModel : ObservableObject
-        {
-            private readonly ILocalizationService _localization;
-
-            public SettingsViewModel(ILocalizationService localization)
-            {
-                _localization = localization;
-            }
-        } */
-
-
-    /*
-     public sealed partial class SettingsViewModel : ObservableObject
+    public IReadOnlyList<string> GetLanguages()
     {
-        private readonly ILocalizationService _localization;
-
-        [ObservableProperty]
-        private string _selectedLanguage;
-
-        public IReadOnlyList<string> Languages => _localization.AvailableLanguages;
-
-        public SettingsViewModel(ILocalizationService localization)
-        {
-            _localization = localization;
-            SelectedLanguage = _localization.CurrentLanguage;
-        }
-
-        partial void OnSelectedLanguageChanged(string value)
-        {
-            _localization.SetLanguage(value);
-        }
+        // TODO: Get languages from localization service
+        return languages;
     }
-
-
-     */
 }
