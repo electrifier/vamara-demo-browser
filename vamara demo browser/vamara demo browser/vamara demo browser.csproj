@@ -83,6 +83,7 @@
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
 		<Folder Include="Interop\Shell32\" />
+		<Folder Include="WinUI.extensions\" />
 	</ItemGroup>
 
 	<ItemGroup>
