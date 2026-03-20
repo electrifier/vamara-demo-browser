@@ -82,6 +82,7 @@
 		<Folder Include="Assets\Themes\Lorraine\" />
 		<Folder Include="Controls\Samples\" />
 		<Folder Include="Docs\screenshots\" />
+		<Folder Include="Interop\Shell\" />
 	</ItemGroup>
 
 	<ItemGroup>
