@@ -12,8 +12,32 @@
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
-    <Grid>
-        <NavigationView x:Name="RootNavigationView" 
+
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            --><!-- Tree --><!--
+            <ColumnDefinition Width="*"/>
+            --><!-- Explorer --><!--
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            --><!-- AppBar --><!--
+            <RowDefinition Height="*"/>
+            --><!-- Content --><!--
+        </Grid.RowDefinitions>
+
+        --><!-- AppBar --><!--
+        <local:ExplorerAppBar x:Name="AppBar" Grid.Row="0" Grid.ColumnSpan="2" Height="48" />
+
+        --><!-- TreeView --><!--
+        <local:ShellNamespaceTreeView x:Name="Tree" Grid.Row="1" Grid.Column="0" Margin="0,4,8,0"/>
+
+        --><!-- Explorer Content --><!--
+        <Frame Grid.Row="1" Grid.Column="1" x:Name="ContentFrame"/>
+    </Grid>-->
+
+    <NavigationView x:Name="RootNavigationView" 
                         AlwaysShowHeader="True"
                         ExpandedModeThresholdWidth="256"
                         Header="Vanara vana"
@@ -113,7 +137,6 @@
                 </Grid>
             </Frame>
         </NavigationView>
-    </Grid>
 </Window>
 
 <!-- <PathIcon Width="28" Height="28">
