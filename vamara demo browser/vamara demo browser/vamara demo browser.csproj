@@ -151,5 +151,6 @@
 		<PackageTags>Vanara; Pinvoke; P-Invoke; WinForms; Win32; Shell32; Windows; Demo; Interop</PackageTags>
 		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
 		<IncludeSymbols>True</IncludeSymbols>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 </Project>
