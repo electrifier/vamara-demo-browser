@@ -25,7 +25,7 @@
 	  <None Remove="Strings\Localizatoin i18n Dictionary.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Page Remove="Controls\Shell32\AppBar.xaml" />
+	  <Page Remove="Controls\Shell32\AppBarT.xaml" />
 	  <Page Remove="Pages\SettingsPage.xaml" />
 	  <Page Remove="Pages\ShellControlGallery.xaml" />
 	  <Page Remove="Themes\Longhorn.xaml" />
@@ -65,7 +65,7 @@
 	  <Page Update="Strings\Localizatoin i18n Dictionary.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
-	  <None Update="Controls\Shell32\AppBar.xaml">
+	  <None Update="Controls\Shell32\AppBarT.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
 	  <None Update="Pages\SettingsPage.xaml">
