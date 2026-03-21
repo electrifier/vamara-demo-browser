@@ -24,10 +24,10 @@ public sealed partial class MainWindow : Window
         InitializeComponent();
 
         // Window.Current.SetTitleBar(AppTitleBar);   // TODO: 19/03/26 - Custom TitleBar implementieren
-        Window.Current.SizeChanged += OnWindowSizeChanged;
+//        Window.Current.SizeChanged += OnWindowSizeChanged;
 
-        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
-        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
+//        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
+//        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
 
         //OnLoaded += OnLoaded;
 

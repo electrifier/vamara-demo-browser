@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window x:Class="vamara_demo_browser.MainWindow"
+        mc:Ignorable="d"
+        xmlns:controls="using:vamara_demo_browser.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="using:vamara_demo_browser"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        mc:Ignorable="d"
         Title="vamara. interop with pleasure. demo browser beta build">
     <!-- ExtendsContentIntoTitleBar="True" -->
     <!-- MinHeight="800" MinWidth="600" -->
@@ -13,30 +14,29 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <!--<Grid>
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="260"/>
-            --><!-- Tree --><!--
             <ColumnDefinition Width="*"/>
-            --><!-- Explorer --><!--
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            --><!-- AppBar --><!--
             <RowDefinition Height="*"/>
-            --><!-- Content --><!--
         </Grid.RowDefinitions>
 
-        --><!-- AppBar --><!--
+        <!-- AppBar -->
         <local:ExplorerAppBar x:Name="AppBar" Grid.Row="0" Grid.ColumnSpan="2" Height="48" />
 
-        --><!-- TreeView --><!--
+        <!-- TreeView -->
         <local:ShellNamespaceTreeView x:Name="Tree" Grid.Row="1" Grid.Column="0" Margin="0,4,8,0"/>
 
-        --><!-- Explorer Content --><!--
+        <!-- Explorer Content -->
         <Frame Grid.Row="1" Grid.Column="1" x:Name="ContentFrame"/>
-    </Grid>-->
+    </Grid>
+</Window>
 
+    
+    
     <NavigationView x:Name="RootNavigationView" 
                         AlwaysShowHeader="True"
                         ExpandedModeThresholdWidth="256"
@@ -48,50 +48,61 @@
                         PaneTitle="Vana´ra"
                         SelectionChanged="NavigationView_SelectionChanged" 
                         SelectionFollowsFocus="Disabled">
-            <NavigationView.HeaderTemplate>
-                <DataTemplate>
-                    <!--<TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
+    <NavigationView.HeaderTemplate>
+        <DataTemplate>
+            <!--<TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
                     <HyperlinkButton Content="Microsoft home page" NavigateUri="https://github.com/tajbender/WinClassicSamplesCS" />-->
-                    <!-- todo: Tapped="OnHeaderTapped" -->
-                </DataTemplate>
-            </NavigationView.HeaderTemplate>
-            <NavigationView.MenuItems>
-                <!-- https://github.com/dahall/Vanara/releases -->
-                <TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
-                <HyperlinkButton Content="Vanara on GitHub" NavigateUri="https://github.com/dahall/Vanara" />
-                <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
-                <!--<NavigationViewItem Icon="Calendar" Content="History" NavigateUri="https://github.com/dahall/Vanara/releases" Tag="History" />-->
-                <NavigationViewItem Icon="Calendar" Content="Releases" Tag="History" />
-                <NavigationViewItemSeparator />
-                <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" />
-                <!-- https://github.com/dahall/Vanara -->
-                <NavigationViewItem Icon="Download" IsEnabled="False" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
-                <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="GitHub Client" Tag="Use GitHub client" />
-                <NavigationViewItemSeparator />
-                <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="Ressource Editor" Tag="Manager for Ressources in your own projects." />
-                <!-- TODO: Where's :octocat ? -->
-            </NavigationView.MenuItems>
-            <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
-            <!-- <NavigationCacheMode="Enabled"/> -->
-            <!-- RootNavigationView -->
-            <Frame x:Name="RootNavigationViewContentFrame">
+            <!-- todo: Tapped="OnHeaderTapped" --><!--
+        </DataTemplate>
+    </NavigationView.HeaderTemplate>
+    <NavigationView.MenuItems>
+        <!-- https://github.com/dahall/Vanara/releases -->
+        <TextBlock Margin="12,0" Text="Vanara" FontSize="28" FontWeight="SemiBold" />
+        <HyperlinkButton Content="Vanara on GitHub" NavigateUri="https://github.com/dahall/Vanara" />
+        <NavigationViewItem Icon="Document" Content="Docs" Tag="Documents" />
+        <!--<NavigationViewItem Icon="Calendar" Content="History" NavigateUri="https://github.com/dahall/Vanara/releases" Tag="History" />-->
+        <NavigationViewItem Icon="Calendar" Content="Releases" Tag="History" />
+        <NavigationViewItemSeparator />
+        <NavigationViewItem Icon="Download" Content="Vanara on GitHub..." Tag="Browse to github.com/Vanara" />
+        <!-- https://github.com/dahall/Vanara -->
+        <NavigationViewItem Icon="Download" IsEnabled="False" Content="Download NuGet Packages..." Tag="Browse to GitHub..."/>
+        <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="GitHub Client" Tag="Use GitHub client" />
+        <NavigationViewItemSeparator />
+        <NavigationViewItem Icon="Microphone" IsEnabled="False" Content="Ressource Editor" Tag="Manager for Ressources in your own projects." />
+        <!-- TODO: Where's :octocat ? -->
+    </NavigationView.MenuItems>
+    <!-- App app (use drag and drop, or add manually, or grab folder of open explorer window)"  -->
+    <!-- <NavigationCacheMode="Enabled"/> -->
+    <!-- RootNavigationView -->
+    <!--<Frame x:Name="RootNavigationViewContentFrame">
                 <Grid RowDefinitions="Auto,Auto,Auto,*">
-                    <!-- HEADER -->
+                    -->
+    <!-- HEADER -->
+    <!--
                     <Grid x:Name="HeaderRoot" Height="255">
-                        <!-- Normal Header -->
+                        -->
+    <!-- Normal Header -->
+    <!--
                         <Grid x:Name="HeaderContent">
-                            <Image x:Name="BackgroundLayer" Source="/Assets/Public Domain/1920px-Rama_and_monkey_chiefs.jpg" Stretch="Fill" />
+                            -->
+    <!--<Image x:Name="BackgroundLayer" Source="/Assets/Public Domain/1920px-Rama_and_monkey_chiefs.jpg" Stretch="Fill" />-->
+    <!--
                             <Image Grid.Column="1" HorizontalAlignment="Left" Source="/Assets/Vanara64x64.png" VerticalAlignment="Top" Width="96" />
-                            <!-- Parallax Layer: foreground -->
+                            -->
+    <!-- Parallax Layer: foreground -->
+    <!--
                             <StackPanel x:Name="ForegroundLayer" VerticalAlignment="Center" Padding="24">
                                 <TextBlock Style="{StaticResource TitleLargeTextBlockStyle}" Text="Settings" />
                             </StackPanel>
-                            <!-- Easter Egg Game Layer -->
+                            -->
+    <!-- Easter Egg Game Layer -->
+    <!--
                             <Canvas x:Name="HappyEasterGameLayer" Visibility="Collapsed" IsHitTestVisible="False" />
                         </Grid>
                     </Grid>
-                    <!-- <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/> -->
-                    <!-- <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
+                    -->
+    <!-- <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom"/> -->
+    <!-- <Border Grid.Row="1" Background="{ThemeResource SystemControlAcrylicWindowBrush}" Padding="16">
                              <StackPanel>
                                 <Image Width="96" Source="/Assets/Vanara64x64.png" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
                                 <Image Height="256" Source="/Assets/.a.i. generated/Copilot/Copilot_20260315_191519.png" Visibility="Collapsed" />
@@ -100,8 +111,9 @@
                             </StackPanel>
                         </Border> -->
 
-                    <!-- TABVIEW -->
-                    <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="False" >
+    <!-- TABVIEW -->
+    <!--
+                    <TabView x:Name="MainTabs" Grid.Row="2" IsAddTabButtonVisible="True" >
                         <TabViewItem Header="Overview" IsEnabled="False" />
                         <TabViewItem Header="Packages" IsEnabled="False" />
                         <TabViewItem Header="Interop" IsEnabled="False" />
@@ -111,14 +123,18 @@
                         <TabViewItem Header="About" IsEnabled="False" />
                     </TabView>
 
-                    <!-- RIBBON (optional) -->
+                    -->
+    <!-- RIBBON (optional) -->
+    <!--
                     <CommandBar x:Name="RibbonBar" Grid.Row="3" DefaultLabelPosition="Right">
                         <AppBarButton Icon="Refresh" Label="Reload"/>
                         <AppBarButton Icon="Copy" Label="Copy Code"/>
                         <AppBarButton Icon="Help" Label="Docs"/>
                     </CommandBar>
 
-                    <!-- CONTENT: ContentFrame, RightSidebar -->
+                    -->
+    <!-- CONTENT: ContentFrame, RightSidebar -->
+    <!--
                     <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -126,53 +142,17 @@
                         </Grid.ColumnDefinitions>
 
                         <Frame Grid.Column="0" x:Name="ContentFrame" />
-                        <!--<Image Source="Assets/octocat.png" Width="64" Height="64"/>
+                        -->
+    <!--<Image Source="Assets/octocat.png" Width="64" Height="64"/>
                             <Image Source="ms-appx:///Assets/octocat.svg"/> -->
 
-                        <!-- Sidebar East -->
+    <!-- Sidebar East -->
+    <!--
                         <Border x:Name="RightSidebar" Background="{ThemeResource LayerFillColorDefaultBrush}" Grid.Column="1">
-                            <!-- Sidebar East Content -->
+                            -->
+    <!-- Sidebar East Content -->
+    <!--
                         </Border>
                     </Grid>
                 </Grid>
-            </Frame>
-        </NavigationView>
-</Window>
-
-<!-- <PathIcon Width="28" Height="28">
-                            <PathIcon.Data>
-                                <GeometryGroup>
-                                    <LineGeometry StartPoint="14,2" EndPoint="14,18"/>
-                                    <LineGeometry StartPoint="14,18" EndPoint="8,26"/>
-                                    <LineGeometry StartPoint="14,18" EndPoint="20,26"/>
-                                </GeometryGroup>
-                            </PathIcon.Data>
-                        </PathIcon> -->
-<!-- <Grid RowDefinitions="Auto,*">
-                            <Border Background="{ThemeResource SystemControlAcrylicWindowBrush}" 
-                            Height="80"
-                            Padding="20"
-                            VerticalAlignment="Top">
-                                <StackPanel Orientation="Horizontal" Spacing="12">
-                                    <FontIcon Glyph="&#xE7C3;" FontSize="32"/>
-                                    <StackPanel>
-                                        <TextBlock Text="Vanara Demo Browser" 
-                           FontSize="24" 
-                           FontWeight="Bold"/>
-                                        <TextBlock Text="Explore. Learn. Interop." 
-                           Opacity="0.7"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                        </Grid> -->
-<!-- <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
-                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
-                     </Border>
-
-                    <Border    Background="LightGray" CornerRadius="10" Margin="20" Opacity="0.42">
-                    <TextBlock HorizontalAlignment="Center" 
-                               VerticalAlignment="Center" 
-                               Text="Welcome to the Vanara demo browser! TODOs: Version: "/>
-                </Border>-->
-<!-- The contentFrame is well known as the Home screen -->
+            </Frame>-->
