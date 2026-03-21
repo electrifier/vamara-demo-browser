@@ -32,6 +32,9 @@
 	  <Page Remove="Themes\Longhorn.xaml" />
 	  <Page Remove="Themes\Template.xaml" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="WindowIcon.ico" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Manifest Include="$(ApplicationManifest)" />
@@ -118,8 +121,8 @@
 		<PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
 		<RepositoryUrl>https://github.com/dahall/Vanara</RepositoryUrl>
 		<Title>Vanra demo browser</Title>
-		<Version>5.26.313</Version>
-		<ApplicationIcon>Assets\MainWindowIcon.ico</ApplicationIcon>
+		<Version>5.26.321</Version>
+		<ApplicationIcon>WindowIcon.ico</ApplicationIcon>
 		<Description>5.26.313</Description>
 		<Copyright>(c) @dahall</Copyright>
 		<PackageProjectUrl>https://github.com/dahall/Vanara</PackageProjectUrl>

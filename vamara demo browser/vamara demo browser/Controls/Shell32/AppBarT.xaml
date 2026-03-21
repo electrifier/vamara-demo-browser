@@ -22,12 +22,11 @@
                     Style="{StaticResource NavigationForwardButtonStyle}"
                     ToolTipService.ToolTip="Vorwärts"/>
 			<Button x:Name="UpButton"
-                    Icon="Up"
                     ToolTipService.ToolTip="Eine Ebene höher"/>
 		</StackPanel>
 
 		<!-- Breadcrumb -->
-		<local:Breadcrumb x:Name="BreadcrumbControl" Grid.Column="1" Margin="12,0" VerticalAlignment="Center" />
+		<!--<local:Breadcrumb x:Name="BreadcrumbControl" Grid.Column="1" Margin="12,0" VerticalAlignment="Center" />-->
 
 		<!-- Action Buttons -->
 		<StackPanel Grid.Column="2"
@@ -36,13 +35,10 @@
                     Spacing="4"
                     Margin="8,0">
 			<Button x:Name="RefreshButton"
-                    Icon="Refresh"
                     ToolTipService.ToolTip="Aktualisieren"/>
 			<Button x:Name="NewFolderButton"
-                    Icon="Add"
                     ToolTipService.ToolTip="Neuer Ordner"/>
 			<Button x:Name="PropertiesButton"
-                    Icon="Info"
                     ToolTipService.ToolTip="Eigenschaften"/>
 		</StackPanel>
 	</Grid>

@@ -13,7 +13,7 @@
             <ColumnDefinition Width="16"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel x:Name="Breadcrumb" Orientation="Horizontal">
+        <StackPanel x:Name="BreadcrumbPanel" Orientation="Horizontal">
 
         </StackPanel>
     </Grid>

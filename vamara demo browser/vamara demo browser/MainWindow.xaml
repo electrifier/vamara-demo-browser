@@ -25,7 +25,10 @@
         </Grid.RowDefinitions>
 
         <!-- AppBar -->
-        <!-- <local:ExplorerAppBarT x:Name="AppBar" Grid.Row="0" Grid.ColumnSpan="2" Height="48" /> -->
+        <!-- <local:AppBarT x:Name="AppBarT" Grid.Row="0" Grid.ColumnSpan="2" /> -->
+
+        <!-- BreadcrumbBar -->
+        <!-- <local:BreadcrumbBar x:Name="BreadcrumbBar" Grid.Row="1" Grid.ColumnSpan="2" /> -->
 
         <!-- TreeView -->
         <!-- <local:ShellNamespaceTreeView x:Name="Tree" Grid.Row="1" Grid.Column="0" Margin="0,4,8,0" /> -->
