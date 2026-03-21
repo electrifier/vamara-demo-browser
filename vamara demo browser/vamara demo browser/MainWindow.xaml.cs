@@ -23,11 +23,15 @@ public sealed partial class MainWindow : Window
         Debug.IndentLevel += 2;
         InitializeComponent();
 
-        // Window.Current.SetTitleBar(AppTitleBar);   // TODO: 19/03/26 - Custom TitleBar implementieren
-//        Window.Current.SizeChanged += OnWindowSizeChanged;
+#if DEBUG
+        // add Command "F5" to open DevTools / Close the window
+#endif
 
-//        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
-//        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
+        // Window.Current.SetTitleBar(AppTitleBar);   // TODO: 19/03/26 - Custom TitleBar implementieren
+        //        Window.Current.SizeChanged += OnWindowSizeChanged;
+
+        //        _bgVisual = ElementCompositionPreview.GetElementVisual(BackgroundLayer) as SpriteVisual;
+        //        _fgVisual = ElementCompositionPreview.GetElementVisual(ForegroundLayer) as SpriteVisual;
 
         //OnLoaded += OnLoaded;
 

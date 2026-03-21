@@ -26,6 +26,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Page Remove="Controls\Shell32\AppBarT.xaml" />
+	  <Page Remove="Controls\Shell32\BreadcrumbBar.xaml" />
 	  <Page Remove="Pages\SettingsPage.xaml" />
 	  <Page Remove="Pages\ShellControlGallery.xaml" />
 	  <Page Remove="Themes\Longhorn.xaml" />
@@ -66,6 +67,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
 	  <None Update="Controls\Shell32\AppBarT.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	  <None Update="Controls\Shell32\BreadcrumbBar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
 	  <None Update="Pages\SettingsPage.xaml">
