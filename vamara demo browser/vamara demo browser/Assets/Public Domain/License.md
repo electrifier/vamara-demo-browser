@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+Licensed by CC WikiMedia Foundation, licensed under CC BY-SA 3.0.
 
-namespace vamara_demo_browser.Assets.Public_Domain
-{
-    class License
-    {
-    }
-}
+To view a copy of this license, visit:
+ http://creativecommons.org/licenses/by-sa/3.0/ 
+
+or send a letter to Creative Commons, 
+ PO Box 1866, Mountain View, CA 94042, USA.
