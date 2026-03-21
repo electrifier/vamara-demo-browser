@@ -17,15 +17,24 @@ public sealed partial class MainWindow : Window
     private SpriteVisual _bgVisual;
     private SpriteVisual _fgVisual;
 
+    public bool GuruMeditationMode { get; set; } = true; 
+
     public MainWindow()
     {
         Debug.WriteLine("MainWindow ctor()");
         Debug.IndentLevel += 2;
-        InitializeComponent();
 
-#if DEBUG
-        // add Command "F5" to open DevTools / Close the window
-#endif
+        try 
+        {
+            //InitializeComponent();
+            // add Command "F5" to open DevTools / Close the window
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine("Exception in MainWindow constructor: " + ex);
+            throw;
+        }
+
 
         // Window.Current.SetTitleBar(AppTitleBar);   // TODO: 19/03/26 - Custom TitleBar implementieren
         //        Window.Current.SizeChanged += OnWindowSizeChanged;
@@ -48,6 +57,12 @@ public sealed partial class MainWindow : Window
         //       };
 
         //var sun = _sunService.GetSunPosition(DateTimeOffset.Now, lat, lon);
+    }
+
+    private void InitializeComponent()
+    {
+        //DebugSettings.ReferenceEquals(this, null);
+        Debug.WriteLine("InitializeComponent called");
     }
 
 
@@ -95,12 +110,6 @@ public sealed partial class MainWindow : Window
     //        ContentFrame.Navigate(typeof(StartPage));
     //    }
 
-    //private void InitializeComponent()
-    //{
-    //    DebugSettings.ReferenceEquals(this, null);
-    //
-    //    Debug.WriteLine("InitializeComponent called");
-    //}
 
     private void RootNavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
     {
