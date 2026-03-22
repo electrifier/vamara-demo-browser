@@ -66,6 +66,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Include="Assets\Vanara 64px.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Page Update="Strings\Localizatoin i18n Dictionary.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </Page>
@@ -74,6 +81,10 @@
 	  </None>
 	  <None Update="Controls\Shell32\BreadcrumbBar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+	  <None Update="Docs\READme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
 	  </None>
 	  <None Update="Pages\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
@@ -110,8 +121,6 @@
 	<!-- Publish Properties -->
 	<PropertyGroup>
 		<Copyright>(c) @dahall</Copyright>
-		<Description>5.26.313</Description>
-		<IncludeSymbols>True</IncludeSymbols>
 		<PackageProjectUrl>https://github.com/dahall/Vanara</PackageProjectUrl>
 		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
 		<PackageTags>Vanara; Pinvoke; P-Invoke; WinForms; Win32; Shell32; Windows; Demo; Interop</PackageTags>
@@ -123,7 +132,7 @@
 		<Title>Vanra demo browser</Title>
 		<Version>5.26.321</Version>
 		<ApplicationIcon>WindowIcon.ico</ApplicationIcon>
-		<Description>5.26.313</Description>
+		<Description>Vanara demo browser</Description>
 		<Copyright>(c) @dahall</Copyright>
 		<PackageProjectUrl>https://github.com/dahall/Vanara</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/dahall/Vanara</RepositoryUrl>
@@ -131,5 +140,7 @@
 		<PackageReleaseNotes>v5.26.313</PackageReleaseNotes>
 		<IncludeSymbols>True</IncludeSymbols>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PackageReadmeFile>READme.md</PackageReadmeFile>
+		<PackageIcon>Vanara 64px.png</PackageIcon>
 	</PropertyGroup>
 </Project>
