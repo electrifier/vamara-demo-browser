@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:vamara_demo_browser.Controls"
+        xmlns:local1="using:vamara_demo_browser.Controls.Shell32"
         Title="vamara. interop with pleasure. demo browser beta build"
         mc:Ignorable="d">
     <!-- ExtendsContentIntoTitleBar="True" -->
@@ -25,7 +26,7 @@
         </Grid.RowDefinitions>
 
         <!-- AppBar -->
-        <!-- <local:AppBarT x:Name="AppBarT" Grid.Row="0" Grid.ColumnSpan="2" /> -->
+        <local1:AppBarT x:Name="AppBarT" Grid.Row="0" Grid.ColumnSpan="2" />
 
         <!-- BreadcrumbBar -->
         <!-- <local:BreadcrumbBar x:Name="BreadcrumbBar" Grid.Row="1" Grid.ColumnSpan="2" /> -->
@@ -37,5 +38,3 @@
         <Frame Grid.Row="1" Grid.Column="1" x:Name="ContentFrame"/>
     </Grid>
 </Window>
-    
-    

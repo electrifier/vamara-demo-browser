@@ -1,34 +1,24 @@
 ﻿<UserControl x:Class="vamara_demo_browser.Controls.Shell32.AppBarT"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="using:vamara_demo_browser.Controls.Shell32" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:models="using:vamara_demo_browser.Models" 
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             d:DataContext="{d:DesignInstance Type=models:SettingsViewModel}"
+             d:DataContext="{d:DesignInstance Type=models:AppBarT}"
              mc:Ignorable="d">
 <!-- TODO: Set design context to correct model! -->
 	<Grid Background="{ThemeResource LayerFillColorDefaultBrush}" Height="48">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="16"/>
-			<ColumnDefinition Width="16"/>
-			<ColumnDefinition Width="16"/>
-		</Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
 
 		<!-- Navigation Buttons -->
-		<StackPanel x:Name="NavigationButtons" Orientation="Horizontal"
-                    VerticalAlignment="Center"
-                    Spacing="4"
-                    Margin="8,0">
-			<Button x:Name="BackButton"
-                    Style="{StaticResource NavigationBackButtonStyle}"
-                    ToolTipService.ToolTip="Zurück"/>
-			<Button x:Name="ForwardButton"
-                    Style="{StaticResource NavigationForwardButtonStyle}"
-                    ToolTipService.ToolTip="Vorwärts"/>
-			<Button x:Name="UpButton"
-                    ToolTipService.ToolTip="Eine Ebene höher"/>
-		</StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+            <Button x:Name="BackButton" Style="{StaticResource AccentButtonStyle}" ToolTipService.ToolTip="NavigateBack" />
+            <Button x:Name="ForwardButton" Style="{StaticResource AccentButtonStyle}" ToolTipService.ToolTip="NavigateForward" />
+            <Button x:Name="UpButton" Style="{StaticResource AccentButtonStyle}" ToolTipService.ToolTip="NavigateUp" />
+        </StackPanel>
 
 		<!-- Breadcrumb -->
 		<!--<local:Breadcrumb x:Name="BreadcrumbControl" Grid.Column="1" Margin="12,0" VerticalAlignment="Center" />-->
