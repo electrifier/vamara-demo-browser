@@ -16,25 +16,39 @@
     </Window.SystemBackdrop>
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="260"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="128"/>
+            <!-- AppBarT -->
             <RowDefinition Height="*"/>
+            <!-- Content -->
         </Grid.RowDefinitions>
 
-        <!-- AppBar -->
-        <local1:AppBarT x:Name="AppBarT" Grid.Row="0" Grid.ColumnSpan="2" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <!-- Tree -->
+            <ColumnDefinition Width="*"/>
+            <!-- Explorer -->
+        </Grid.ColumnDefinitions>
 
-        <!-- BreadcrumbBar -->
-        <!-- <local:BreadcrumbBar x:Name="BreadcrumbBar" Grid.Row="1" Grid.ColumnSpan="2" /> -->
+        <!-- AppBarT -->
+        <local1:AppBarT Grid.Row="0"
+                      Grid.ColumnSpan="2"
+                      x:Name="AppBar"
+                      Height="128"/>
 
         <!-- TreeView -->
-        <!-- <local:ShellNamespaceTreeView x:Name="Tree" Grid.Row="1" Grid.Column="0" Margin="0,4,8,0" /> -->
+        <Border Grid.Row="1" Background="AliceBlue"
+                                     Grid.Column="0"
+                                     x:Name="Tree"
+                                     Margin="0,4,8,0"/>
+        <!--<controls:ShellNamespaceTreeView Grid.Row="1"
+                                     Grid.Column="0"
+                                     x:Name="Tree"
+                                     Margin="0,4,8,0"/>-->
 
         <!-- Explorer Content -->
-        <Frame Grid.Row="1" Grid.Column="1" x:Name="ContentFrame"/>
+        <Frame Grid.Row="1"
+           Grid.Column="1"
+           x:Name="ContentFrame"/>
     </Grid>
 </Window>

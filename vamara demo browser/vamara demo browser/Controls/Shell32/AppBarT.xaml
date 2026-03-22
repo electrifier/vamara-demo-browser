@@ -2,15 +2,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             d:DataContext="{d:DesignInstance Type=models:AppBarT}"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:models="using:vamara_demo_browser.Models" d:DataContext="{d:DesignInstance Type=models:AppBarTViewModel}"
              mc:Ignorable="d">
 <!-- TODO: Set design context to correct model! -->
 	<Grid Background="{ThemeResource LayerFillColorDefaultBrush}" Height="48">
 		<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="128"/>
+            <ColumnDefinition Width="128"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
 		<!-- Navigation Buttons -->
