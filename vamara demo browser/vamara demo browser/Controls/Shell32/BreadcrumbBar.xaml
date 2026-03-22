@@ -4,7 +4,7 @@
              xmlns:local="using:vamara_demo_browser.Controls.Shell32" 
              xmlns:models="using:vamara_demo_browser.Models" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             d:DataContext="{d:DesignInstance Type=models:HeaderViewModel}">
+             d:DataContext="{d:DesignInstance Type=models:SunPositionViewModel}">
 
     <Grid Background="{ThemeResource LayerFillColorDefaultBrush}" Height="48">
         <Grid.ColumnDefinitions>

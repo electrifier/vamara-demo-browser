@@ -3,14 +3,14 @@ using vamara_demo_browser.Services;
 
 namespace vamara_demo_browser.Models;
 
-public sealed partial class HeaderViewModel : ObservableObject
+public sealed partial class SunPositionViewModel : ObservableObject
 {
     private readonly SunPositionProvider _provider;
 
     // TODO:    //[ObservableProperty]
     // TODO:    //private SunPosition _sun;
 
-    public HeaderViewModel(SunPositionProvider provider)
+    public SunPositionViewModel(SunPositionProvider provider)
     {
         _provider = provider;
         UpdateSun();
