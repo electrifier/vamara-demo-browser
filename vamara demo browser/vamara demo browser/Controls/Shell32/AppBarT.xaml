@@ -2,7 +2,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:models="using:vamara_demo_browser.Models" d:DataContext="{d:DesignInstance Type=models:AppBarTViewModel}"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:models="using:vamara_demo_browser.Controls.Models" 
+             xmlns:local="using:vamara_demo_browser.Controls.Shell32"
+             d:DataContext="{d:DesignInstance Type=models:AppBarTViewModel}"
              mc:Ignorable="d">
 <!-- TODO: Set design context to correct model! -->
 	<Grid Background="{ThemeResource LayerFillColorDefaultBrush}" Height="48">
@@ -19,10 +22,10 @@
             <Button x:Name="UpButton" Style="{StaticResource AccentButtonStyle}" ToolTipService.ToolTip="NavigateUp" />
         </StackPanel>
 
-		<!-- Breadcrumb -->
-		<!--<local:Breadcrumb x:Name="BreadcrumbControl" Grid.Column="1" Margin="12,0" VerticalAlignment="Center" />-->
+        <!-- Breadcrumb Controls.Shell32.BreadcrumbBar -->
+        <local:BreadcrumbBar x:Name="BreadcrumbControl" Grid.Column="1" Margin="12,0" VerticalAlignment="Center" />
 
-		<!-- Action Buttons -->
+        <!-- Action Buttons -->
 		<StackPanel Grid.Column="2"
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
